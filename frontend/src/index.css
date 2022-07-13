@@ -17,16 +17,16 @@ a {
 }
 
 p {
-  line-height: 1.7;
+  line-height: 1.2;
 }
 
-ul {
+/* ul {
   list-style: none;
-}
+}*/
 
 li {
   line-height: 2.2;
-}
+} 
 
 h1,
 h2,
@@ -35,12 +35,16 @@ h3 {
   margin-bottom: 10px;
 }
 
+.brototype {
+  color: white;
+}
+
 .container {
   width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
+  max-width: 100%;
+  /* margin: 0 auto; */
   padding: 0 20px;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .header {
@@ -52,7 +56,7 @@ h3 {
   margin-bottom: 60px;
 }
 
-.header ul {
+/* .header ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -65,15 +69,15 @@ h3 {
 .header ul li a {
   display: flex;
   align-items: center;
-}
+} */
 
-.header ul li a:hover {
+/* .header ul li a:hover {
   color: #777;
 }
 
 .header ul li a svg {
   margin-right: 5px;
-}
+} */
 
 .heading {
   font-size: 2rem;
