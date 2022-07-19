@@ -1,37 +1,38 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import getUsersService from './getUsersService'
+import getStaffsService from './getStaffsService'
 
 const initialState = {
-    users: [],
+    staffs: [],
     isError: false,
     isSuccess: false,
     isLoading: false,
     message: ''
 }
 
-export const getUsers = createAsyncThunk('fetch-Users', async ( thunkAPI) => {
+//get all staffs
+export const getStaffs = createAsyncThunk('fetch-Staffs', async ( thunkAPI) => {
     try {
-        return await getUsersService.fetchUsers()
+        return await getStaffsService.fetchStaffs()
     } catch (error) {
         const message = (error.response && error.response.data && error.response.data.message) || error.message || error.toString() || 'Something went wrong';
         return thunkAPI.rejectWithValue(message)
     }
 });
 
-
-//delete user
-export const removeUser = createAsyncThunk('delete-user', async (userId, thunkAPI) => {
-    try {
-      return await getUsersService.deleteUser(userId);
-    } catch (error) {
-      const message = (error.response && error.response.data && error.response.data.message) || error.message || error.toString() || 'Something went wrong';
-      return thunkAPI.rejectWithValue(message);
+//delete staffs
+export const removeStaff = createAsyncThunk('delete-staff', async (staffId, thunkAPI) => {
+      try {
+        return await getStaffsService.deleteStaff(staffId);
+      } catch (error) {
+        const message = (error.response && error.response.data && error.response.data.message) || error.message || error.toString() || 'Something went wrong';
+        return thunkAPI.rejectWithValue(message);
+      }
     }
-  }
-);
+  );
 
-export const getUsersSlice = createSlice({
-    name : 'fetch-all-users',
+
+export const getStaffsSlice = createSlice({
+    name : 'fetch-all-staffs',
     initialState, 
     reducers: {
           reset: (state) => {
@@ -42,41 +43,41 @@ export const getUsersSlice = createSlice({
         }
     },
     extraReducers: {
-         [getUsers.pending]: (state) => {
+         [getStaffs.pending]: (state) => {
             state.isLoading = true
         },
-        [getUsers.fulfilled]: (state, action) => {
+        [getStaffs.fulfilled]: (state, action) => {
             state.isLoading = false
             state.isSuccess = true
-            state.users = action.payload
+            state.staffs = action.payload
         },
-        [getUsers.rejected]: (state, action) => {
+        [getStaffs.rejected]: (state, action) => {
             state.isLoading = false
             state.isSuccess = false
             state.isError = true
             state.message = action.payload
-            state.users = null
+            state.staffs = null
         },
-        [removeUser.pending]: (state) => {
+        [removeStaff.pending]: (state) => {
             state.isLoading = true
         },
-        [removeUser.fulfilled]: (state, action) => {
-            const itemId = action.payload.userId;
-            state.users.users = state.users.users.filter(
+        [removeStaff.fulfilled]: (state, action) => {
+            const itemId = action.payload.staffId;
+            state.staffs.staffs = state.staffs.staffs.filter(
                 (item) => item._id !== itemId
             );
             state.isLoading = false
             state.isSuccess = true
         },
-        [removeUser.rejected]: (state, action) => {
+        [removeStaff.rejected]: (state, action) => {
             state.isLoading = false
             state.isSuccess = false
             state.isError = true
             state.message = action.payload
-            state.users = null
+            state.staffs = null
         }
     },
 });
 
-export const {reset} = getUsersSlice.actions
-export default getUsersSlice.reducer
+export const {reset} = getStaffsSlice.actions
+export default getStaffsSlice.reducer

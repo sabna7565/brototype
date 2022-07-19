@@ -8,8 +8,14 @@ export const fetchUsers = async () => {
   
 };
 
+// delete user at admin side
+export const deleteUser = async (userId) => {
+  const { data } = await api.removeUser(userId);
+  return data;
+};
+
 const getUsersService = {
-    fetchUsers
+    fetchUsers, deleteUser,
 }
 
 

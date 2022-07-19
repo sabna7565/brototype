@@ -1,0 +1,39 @@
+.addstaff{
+    width: 100%;
+
+    .addstaffContainer{
+        flex: 12;
+
+        .addstafftitle{
+            align-items: center;
+            width: 100%;
+            padding: 10px;
+            padding-top: 35px;
+
+            .title{
+                text-decoration: underline;
+                align-items: center; 
+                margin-left: 40%;           
+            }
+
+            .viewButton{
+                align-items: center;
+                font-size: 15px;
+                padding: 3px;
+                background-color: black;
+                color: white;
+                margin-left: 70%;
+                width: 7%;
+            }
+        }
+
+        .body{
+            padding: 1px;
+            -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+            box-shadow: 2px 4px 10px 1px rgba(58, 53, 53, 0.47);
+            margin-left: 4px;
+            margin-right:  4px;   
+            margin-top: 1px;             
+        }
+    }
+}

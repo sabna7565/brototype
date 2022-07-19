@@ -8,9 +8,23 @@ import PaymentIcon from '@material-ui/icons/Payment';
 import PostAddIcon from '@material-ui/icons/PostAdd';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import CodeIcon from '@material-ui/icons/Code';
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
+import {adminlogout, adminreset} from '../../../features/admin/auth/adminAuthSlice'
+import {useSelector, useDispatch} from 'react-redux'
+import {FaSignInAlt, FaSignOutAlt, FaUser} from 'react-icons/fa'
+
 
 const Sidebar = () => {
+const navigate = useNavigate()
+const dispatch = useDispatch()
+const {admin} = useSelector((state) => state.adminauth)
+
+const onLogout = () => {
+  dispatch(adminlogout())
+  dispatch(adminreset())
+  navigate('/admin')
+}
+
   return (
     <div className='sidebar'>
       <div className="top">
@@ -26,6 +40,7 @@ const Sidebar = () => {
           <DashboardIcon className='icon'/>
           <span>Dashboard</span>
         </li></Link>
+        
         <p className="title">Users</p>
         <Link to="/admin/staffs">
         <li>
@@ -33,37 +48,62 @@ const Sidebar = () => {
           <span>Staffs</span>
         </li>
         </Link>
-        <Link to="/admin/users">
 
+        <Link to="/admin/users">
         <li>
           <PersonIcon className='icon'/>
           <span>students</span>
         </li>
         </Link>
+
         <p className="title">Activities</p>
+
+        <Link to="/admin/branch">
         <li>
+          <WorkIcon className='icon'/>
+          <span>Branches</span>
+        </li>
+        </Link>
+
+        <Link to="/admin/batches"><li>
           <GroupIcon className='icon'/>
           <span>Batches</span>
         </li>
+        </Link>
+
+        <Link to="/admin/designation">
         <li>
           <WorkIcon className='icon'/>
           <span>Designation</span>
         </li>
+        </Link>
+
+        <Link to="/admin/payments">
         <li>
           <PaymentIcon className='icon'/>
           <span>Payments</span>
         </li>
+        </Link>
+
+        <Link to="/admin/placements">
         <li>
           <CodeIcon className='icon'/>
           <span>Placements</span>
         </li>
+        </Link>
+
+        <Link to="/admin/posts">
         <li>
           <PostAddIcon className='icon'/>
           <span>Posts</span>
         </li>
+        </Link>
+
         <li>
           <ExitToAppIcon className='icon'/>
-          <span>Logout</span>
+          <button onClick={onLogout}>
+           Logout  
+          </button> 
         </li></ul></div>
       <div className="bottom">
         <div className="colorOption"></div>

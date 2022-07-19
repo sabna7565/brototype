@@ -70,6 +70,20 @@
                         color: black;
                     }
                 }
+
+                button{
+                    font-size: 15px;
+                    font-weight: 600;
+                    color: rgb(194, 186, 186);
+                    margin-left: 10px;
+                    background-color: black;
+                    border: none;
+
+                    &:hover{
+                        color: black;
+                        background-color: white;
+                    }
+                }
             }
          }
     }

@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import getUsersService from './singleUserService'
+import singleUserService from "./singleUserService";
 
 const initialState = {
     user: [],
@@ -9,17 +9,17 @@ const initialState = {
     message: ''
 }
 
-export const getUsers = createAsyncThunk('fetch-Users', async ( thunkAPI) => {
-    try {
-        return await getUsersService.fetchUsers()
+export const getUser = createAsyncThunk('fetch-User', async (userId, thunkAPI) => {
+    try {        
+        return await singleUserService.singleUser(userId)
     } catch (error) {
         const message = (error.response && error.response.data && error.response.data.message) || error.message || error.toString() || 'Something went wrong';
         return thunkAPI.rejectWithValue(message)
     }
 });
 
-export const getUsersSlice = createSlice({
-    name : 'fetch-all-users',
+export const singleUserSlice = createSlice({
+    name : 'fetch-single-user',
     initialState, 
     reducers: {
           reset: (state) => {
@@ -30,15 +30,17 @@ export const getUsersSlice = createSlice({
         }
     },
     extraReducers: {
-         [getUsers.pending]: (state) => {
+         [getUser.pending]: (state, action) => {
             state.isLoading = true
+            state.isSuccess = true
+            state.user = action.payload
         },
-        [getUsers.fulfilled]: (state, action) => {
+        [getUser.fulfilled]: (state, action) => {
             state.isLoading = false
             state.isSuccess = true
             state.user = action.payload
         },
-        [getUsers.rejected]: (state, action) => {
+        [getUser.rejected]: (state, action) => {
             state.isLoading = false
             state.isSuccess = false
             state.isError = true
@@ -48,5 +50,5 @@ export const getUsersSlice = createSlice({
     },
 });
 
-export const {reset} = getUsersSlice.actions
-export default getUsersSlice.reducer
+export const {reset} = singleUserSlice.actions
+export default singleUserSlice.reducer

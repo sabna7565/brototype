@@ -5,8 +5,8 @@ import adminAuthService from './adminAuthService'
 const admin = JSON.parse(localStorage.getItem('admin'))
 console.log("details",admin);
 const initialState = {
-    // admin: admin ? admin : null,
-    admin: null,
+    admin: admin ? admin : null,
+    // admin: null,
     isError: false,
     isSuccess: false,
     isLoading: false,

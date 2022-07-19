@@ -4,18 +4,17 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
-import { reset, } from '../../../../features/admin/users/getUsersSlice'
+import { reset } from '../../../../features/admin/users/getUsersSlice'
 import Spinner from '../../../Spinner'
+import  { removeUser } from '../../../../features/admin/users/getUsersSlice'
 
 function DataTable () {
   // const label = { inputProps: { 'aria-label': '' }};
   const [User, setUser] = useState([])
 
   const dispatch = useDispatch()
-
   
   const { users, isLoading, isError, isSuccess, message} = useSelector((state) => state.fetchUsers);
-  console.log("sajna", users);
 
   useEffect(() => {
     if (isError) {
@@ -56,16 +55,17 @@ function DataTable () {
       { field: 'action', headerName: 'Action', width: 150, renderCell:(params)=>{
         return(
             <div className="cellAction">
-              <Link to={`/admin/users/${users._id}`}>
+              <Link to={`/admin/users/${params.id}`}>
                 <button className="viewButton" id={params.id ? params.id:""}>View</button>
                 </Link>
-                <button className="deleteButton">Delete</button>
+                <Link to="" style={{ textDecoration: "none" }}>
+                <button onClick={()=>{dispatch(removeUser(params.id))}} className="deleteButton">Delete</button>
+                </Link>
             </div>
         )
     } }
 
     ];
-console.log("User", User);
     const rows = User ? User : '';
   
     

@@ -11,6 +11,11 @@ import Single from './pages/admin/single/Single'
 import New from './pages/admin/new/New'
 import { useSelector } from 'react-redux'
 import Layout from './pages/admin/Layout'
+import AddStaff from './pages/admin/addstaff/AddStaff'
+import StaffList from './pages/admin/stafflist/StaffList'
+import SingleStaff from './pages/admin/singlestaff/SingleStaff' 
+import DesignationList from './pages/admin/designation/Designation'
+import Location from './pages/admin/location/Location'
 
 function App() {
 const admin = useSelector((state) => state.adminauth.admin)
@@ -27,18 +32,43 @@ const user = useSelector((state) => state.auth.user)
 
         {/* ====================Admin======================= */}
 
-        <Route path='admin'>            
-        <Route index element={<AdminLogin />} />
+        <Route path='/admin'>            
+        <Route path= '' element={<AdminLogin />} />
         <Route path='admindashboard' element={admin
           ? <Layout children={<AdminDashboard />} />
           : <AdminLogin />}/>
+
         <Route path='users'>
-          <Route index element={admin ? 
-          <Layout children={<List />} />
-           : <AdminLogin /> }/>
-          <Route path=':id' element={<Single />} />
+          <Route index element={admin ? <Layout children={<List />} /> : <AdminLogin /> }/>
+          <Route path=':id' element={admin ? <Layout children={<Single />} /> : <AdminLogin /> } />
           <Route path='new' element={<New />} />
         </Route>
+
+        <Route path='staffs'>
+          <Route index element={admin ? <Layout children={<StaffList />} /> : <AdminLogin /> }/>
+          <Route path=':id' element={admin ? <Layout children={<SingleStaff />} /> : <AdminLogin /> } />
+          <Route path='new' element={admin ? <Layout children={ <AddStaff />} /> : <AdminLogin /> } />
+        </Route>
+
+        <Route path='branch'>
+          <Route index element={admin ? <Layout children={<Location />} /> : <AdminLogin /> }/>
+           <Route path=':id' element={admin ? <Layout children={<SingleStaff />} /> : <AdminLogin /> } />
+         {/* <Route path='new' element={admin ? <Layout children={ <AddStaff />} /> : <AdminLogin /> } /> */}
+        </Route>
+
+        <Route path='designation'>
+          <Route index element={admin ? <Layout children={<DesignationList />} /> : <AdminLogin /> }/>
+           <Route path=':id' element={admin ? <Layout children={<SingleStaff />} /> : <AdminLogin /> } />
+         {/* <Route path='new' element={admin ? <Layout children={ <AddStaff />} /> : <AdminLogin /> } /> */}
+        </Route>
+
+        <Route path='placements'>
+          <Route index element={admin ? <Layout children={<DesignationList />} /> : <AdminLogin /> }/>
+           <Route path=':id' element={admin ? <Layout children={<SingleStaff />} /> : <AdminLogin /> } />
+         {/* <Route path='new' element={admin ? <Layout children={ <AddStaff />} /> : <AdminLogin /> } /> */}
+        </Route>
+
+
         </Route>
         
         {/* ====================Staff======================= */}

@@ -1,0 +1,22 @@
+.alldesignation{
+width: 100%;
+display: flex;
+gap: 30px;
+flex: 6;
+
+.designationlist{
+    flex: 3;
+    background-color: red;
+    height: 100%;
+
+    .viewButton{
+        height: 40px;
+        width: 70px;
+        background-color: black;
+        color: white;
+        border-color: rgb(207, 5, 5);
+        border-width: 3px;
+        border-radius: 1px;
+    }
+}
+}

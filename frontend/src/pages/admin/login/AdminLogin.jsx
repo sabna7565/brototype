@@ -8,7 +8,8 @@ import AdminHeader from '../../../components/admin/header/AdminHeader'
 export const AdminLogin = () => {
   return (
     
-    <div><AdminHeader />
+    <div>
+      {/* <AdminHeader /> */}
     <AdminnLogin /></div>
   )
 }

@@ -56,7 +56,7 @@ h3 {
   margin-bottom: 60px;
 }
 
-/* .header ul {
+ .header ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -69,15 +69,15 @@ h3 {
 .header ul li a {
   display: flex;
   align-items: center;
-} */
+} 
 
-/* .header ul li a:hover {
+ .header ul li a:hover {
   color: #777;
 }
 
 .header ul li a svg {
   margin-right: 5px;
-} */
+} 
 
 .heading {
   font-size: 2rem;

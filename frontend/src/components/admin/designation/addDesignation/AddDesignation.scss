@@ -1,0 +1,15 @@
+
+.designation{
+    .addbutton{
+        background-color: black;
+        color: white;
+        padding: 5px;
+        font-size: 15px;
+        height: 38px;
+
+        &:hover{
+            background-color: white;
+            color: black;
+        }
+    }
+}
