@@ -57,7 +57,7 @@ const onLogout = () => {
         </Link>
 
         <p className="title">Activities</p>
-
+        
         <Link to="/admin/branch">
         <li>
           <WorkIcon className='icon'/>
@@ -65,12 +65,13 @@ const onLogout = () => {
         </li>
         </Link>
 
-        <Link to="/admin/batches"><li>
+        <Link to="/admin/batch">
+        <li>
           <GroupIcon className='icon'/>
-          <span>Batches</span>
+          <span>Batch</span>
         </li>
         </Link>
-
+        
         <Link to="/admin/designation">
         <li>
           <WorkIcon className='icon'/>

@@ -17,3 +17,12 @@ export const removeStaff=(staffId)=>API.delete(`/delete-staff/${staffId}`)
 
 export const insertDesignation=(designationData)=>API.post('/add-designation',designationData)
 export const viewDesignations=()=>API.get('/fetch-designations')
+
+export const insertBranch=(branchData)=>API.post('/add-branch',branchData)
+export const viewBranchs=()=>API.get('/fetch-branchs/')
+export const viewBranch=(locname)=>API.get(`/fetch-branch/${locname}`)
+
+export const addBatchs=(batchData)=>API.post('/add-batch', batchData)
+export const viewBatchs=()=>API.get('/fetch-batchs')
+
+

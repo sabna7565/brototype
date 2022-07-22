@@ -1,0 +1,73 @@
+.allbranch{
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    gap: 35px;
+    display: flex;
+    height: auto;
+    
+.left{
+    width: 31%;
+
+    .pic{
+        height: 325px;
+        .userImg{
+            width: 300px;
+            height: 300px;
+            border-radius: 15px;
+        }
+    }
+
+    .name{
+        margin-top: -54px;
+        background-color: lightblue;
+        .ernakulam{
+            padding-left: 25%;
+            color: white;
+
+        }
+    }
+}
+
+.center{
+    width: 31%;
+    .pic{
+        height: 325px;
+        .userImg{
+            width: 300px;
+            height: 300px;
+            border-radius: 15px;
+        }
+    }
+
+    .name{
+        margin-top: -54px;
+        .ernakulam{
+            padding-left: 37%;
+            color: white;
+        }
+    }
+}
+
+.right{
+    width: 31%;
+    .pic{
+        height: 325px;
+        .userImg{
+            width: 300px;
+            height: 300px;
+            border-radius: 15px;
+        }
+    }
+
+    .name{
+        margin-top: -54px;
+        background-color: lightblue;
+        .ernakulam{
+            padding-left: 29%;
+            color: white;
+
+        }
+    }
+}
+}

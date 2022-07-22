@@ -16,6 +16,10 @@ import StaffList from './pages/admin/stafflist/StaffList'
 import SingleStaff from './pages/admin/singlestaff/SingleStaff' 
 import DesignationList from './pages/admin/designation/Designation'
 import Location from './pages/admin/location/Location'
+import Addbranch from './components/admin/branch/addbranch/Addbranch';
+import Viewbranch from './components/admin/branch/Viewbranch'
+import Batch from './pages/admin/batch/BatchList'
+import Addbatch from './components/admin/batch/addbatch/Addbatch'
 
 function App() {
 const admin = useSelector((state) => state.adminauth.admin)
@@ -50,10 +54,16 @@ const user = useSelector((state) => state.auth.user)
           <Route path='new' element={admin ? <Layout children={ <AddStaff />} /> : <AdminLogin /> } />
         </Route>
 
+        <Route path='batch'>
+          <Route index element={admin ? <Layout children={<Batch />} /> : <AdminLogin /> }/>
+           {/* <Route path=':location' element={admin ? <Layout children={<Viewbranch />} /> : <AdminLogin /> } /> */}
+          <Route path='new' element={admin ? <Layout children={ <Addbatch />} /> : <AdminLogin /> } />
+        </Route>
+
         <Route path='branch'>
           <Route index element={admin ? <Layout children={<Location />} /> : <AdminLogin /> }/>
-           <Route path=':id' element={admin ? <Layout children={<SingleStaff />} /> : <AdminLogin /> } />
-         {/* <Route path='new' element={admin ? <Layout children={ <AddStaff />} /> : <AdminLogin /> } /> */}
+           <Route path=':location' element={admin ? <Layout children={<Viewbranch />} /> : <AdminLogin /> } />
+          <Route path='new' element={admin ? <Layout children={ <Addbranch />} /> : <AdminLogin /> } />
         </Route>
 
         <Route path='designation'>

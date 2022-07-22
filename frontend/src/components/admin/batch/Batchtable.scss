@@ -1,0 +1,49 @@
+.datatable{
+    .cellWrapper{
+        display: flex;
+        align-items: center;
+
+        .image{
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            margin-right: 10px;
+            object-fit: cover
+        }
+    }
+
+    .status{
+        padding: 5px;
+        border-radius: 5px;
+
+        &.Approved{
+            color:black;
+        }
+
+        &.Pending{
+            color:red;
+        }
+    }
+
+    .tableCell{
+        align-items: center;
+        padding-left: 3%;
+
+        .viewButton{
+            padding: 2px;
+            border-radius: 5px;
+            color: darkblue;
+            cursor: pointer;
+            border: 1px solid rgba(15, 15, 77, 0.295);
+        }
+    
+        .deleteButton{
+            padding: 2px;
+            border-radius: 5px;
+            color: crimson;
+            cursor: pointer;
+            border: 1px solid rgba(220, 20, 60, 0.342);
+        }
+    }
+
+}

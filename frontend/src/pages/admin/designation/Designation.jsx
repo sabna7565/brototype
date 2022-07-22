@@ -14,7 +14,7 @@ const DesignationList = () => {
    useEffect(() => {
     dispatch(allDesignations())
     }, [dispatch]);
-  
+      
      
   return (
     <div className='designation'>

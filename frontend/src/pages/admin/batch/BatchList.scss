@@ -1,0 +1,39 @@
+.stafflist{
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+
+    .stafflistContainer{
+        flex: 6;
+
+        .stafftitle{
+            width: 100%;
+            align-items: center;
+            margin-left: 40%;
+            margin-top: 30px;
+
+            .title{
+                margin-top: 15px;
+                text-decoration: underline;
+            }
+
+            .viewButton{
+                padding: 4px;
+                font-size: 15px;
+                border-radius: 5px;
+                color: rgb(253, 253, 253);
+                background-color: black;
+                cursor: pointer;
+                margin-top: 2%;
+                margin-left: 29%;
+                border: 1px solid rgba(15, 15, 77, 0.295);
+            }
+        }  
+        .body{
+            padding: 20px;
+            -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+            box-shadow: 2px 4px 10px 1px rgba(122, 117, 117, 0.47);
+            margin: 20px;                
+        }     
+    }
+}

@@ -28,9 +28,6 @@ const useStyles = makeStyles((theme) => ({
 
   const classes = useStyles();
 
-
-  // const classes = useStyles();
-
   const dispatch=useDispatch()
   const [Designation, setDesignation] = useState()
    const {designation, isLoading, isSuccess, isError, message} = useSelector((state) => state.allDesignations);
@@ -43,13 +40,12 @@ const useStyles = makeStyles((theme) => ({
     if (isSuccess && designation) {
       setDesignation(designation)
     }
-    
+        
     dispatch(reset());
   }, [designation,isSuccess, isError, message, dispatch]);
 
-  // console.log("sabbbbbb", designation.designation);
-
   const rows = Designation ? Designation?.designation : [];
+  console.log("all rows design", rows)
 
   function FormRow() {
     return (
@@ -63,8 +59,7 @@ const useStyles = makeStyles((theme) => ({
     );
   }
   
-   return (   
-     
+  return (        
   <div className= {classes.root}>
   <Grid container spacing={1}>
         <Grid container item xs={12} spacing={1}>

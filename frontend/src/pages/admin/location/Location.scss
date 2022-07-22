@@ -1,0 +1,52 @@
+.location{
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+
+    .locationContainer{
+        flex: 6;
+        
+        .locationtitle{
+            width: 100%;
+            align-items: center;
+            margin-left: 40%;
+
+            .title{
+                margin-top: 15px;
+                text-decoration: underline;
+            }
+        }  
+
+        .addlocation{
+            margin-left: 70%;
+            .viewButton{
+                padding: 6px;
+                font-size: 15px;
+                border-radius: 5px;
+                color: rgb(253, 253, 253);
+                background-color: black;
+                cursor: pointer;
+                margin-top: 2%;
+                margin-left: 29%;
+                border: 1px solid rgba(15, 15, 77, 0.295);
+            }
+       }
+        
+        .body{
+            width: 90%;
+            padding: 20px;
+            margin-top: 40px;
+            margin-left: 5%;
+            gap: 40px;
+            display: flex;
+            height: 400px;
+            -webkit-box-shadow: 2px 4px 10px 1px rgba(2, 2, 2, 4.47);
+            box-shadow: 2px 4px 10px 1px rgb(7, 7, 7); 
+       }
+      
+        .studdatatable{
+            margin-left: 10px;
+            margin-top: 20px;
+        }
+    }
+}

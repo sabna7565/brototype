@@ -5,6 +5,9 @@ const Admin = require('../models/adminModel')
 const User = require('../models/userModel')
 const Staff = require('../models/staffModel')
 const Designation = require('../models/designationModel')
+const Branch = require('../models/branchModel')
+const Batch = require('../models/batchModel')
+const moment = require('moment');
 
 
 // @desc  Authenticate a user
@@ -230,6 +233,139 @@ const fetchdesignation = asyncHandler(async (req,res) =>{
         throw new Error('Cannot fetch designation due some errors');
     }
 })
+
+
+// @desc  branch insertion
+// @route  GET /api/admin/branch/new
+const addBranch = asyncHandler(async (req, res) => {
+    const { branch_name, location, address, branch_image } = req.body
+    
+
+    if(!branch_name || !location || !address || !branch_image ) {
+        res.status(400)
+        throw new Error('Please add all fields')
+    }
+
+    // check if staff exists
+    const branchExists = await Branch.findOne({branch_name})
+
+    if(branchExists) {
+        res.status(400)
+        throw new Error('Branch already added')
+    }
+
+    //Create branch
+    const branch = await Branch.create({
+        branch_name, location, address, branch_image
+    })
+
+    if(branch) {
+        res.status(201).json({
+           _id: branch.id,
+           branch_name: branch.branch_name,
+           location: branch.location, 
+           address: branch.address,
+           branch_image: branch.branch_image,
+        })
+    } else {
+        res.status(400)
+        throw new Error('Invalid branch details')
+    }
+})
+
+// @desc  Get branch list
+// @route  GET /api/admin/branches
+// @access Public
+const fetchBranchs = asyncHandler(async (req,res) =>{
+    const branch = await Branch.find({});
+
+    if(branch) {
+        res.status(200).json({
+            branch,
+        });
+    } else {
+        res.status(400);
+        throw new Error('Cannot fetch branchs due some errors');
+    }
+})
+
+// @desc  Get branch list
+// @route  GET /api/admin/branches
+// @access Public
+const fetchBranch = asyncHandler(async (req,res) =>{
+    const locname = req.params.location;
+    const branch = await Branch.find({location: locname});
+
+    if(branch) {
+        res.status(200).json({
+            branch,
+        });
+    } else {
+        res.status(400);
+        throw new Error('Cannot fetch branchs due some errors');
+    }
+})
+
+// @desc  batch insertion
+// @route  GET /api/admin/batch/new
+const addBatch = asyncHandler(async (req, res) => {
+    const { batch_name, location, advisor, starting } = req.body
+    
+
+    if(!batch_name || !location || !advisor || !starting ) {
+        res.status(400)
+        throw new Error('Please add all fields')
+    }
+
+    // check if batch exists
+    const batchExists = await Batch.findOne({batch_name})
+
+    if(batchExists) {
+        res.status(400)
+        throw new Error('Batch already added')
+    }
+
+    let endday= await moment(starting).subtract(-168,'days').format('YYYY/MM/DD')
+    console.log("end day", endday)
+
+    //Create batch
+    const batch = await Batch.create({
+        batch_name, location, advisor, starting, ending:endday
+    })
+
+    if(batch) {
+        res.status(201).json({
+           _id: batch.id,
+           batch_name: batch.batch_name,
+           location: batch.location, 
+           advisor: batch.advisor,
+           starting: batch.starting,
+           ending: batch.ending,
+ 
+        })
+    } else {
+        res.status(400)
+        throw new Error('Invalid Batch details')
+    }
+})
+
+// @desc  Get staff list
+// @route  GET /api/admin/staffs
+// @access Public
+const fetchBatchs = asyncHandler(async (req,res) =>{
+    const batch = await Batch.find({});
+
+    if(batch) {
+        res.status(200).json({
+            batch,
+        });
+    } else {
+        res.status(400);
+        throw new Error('Cannot fetch batchs due some errors');
+    }
+})
 module.exports = {
-    loginAdmin, getMe, fetchUsers, fetchUser, deleteUser, addStaff, fetchStaffs, deleteStaff, addDesignation, fetchdesignation,
+    loginAdmin, getMe, fetchUsers, fetchUser, deleteUser, addStaff, fetchStaffs, 
+    deleteStaff, addDesignation, fetchdesignation,  addBranch, fetchBranch,
+    fetchBranchs, addBatch, fetchBatchs, 
 }

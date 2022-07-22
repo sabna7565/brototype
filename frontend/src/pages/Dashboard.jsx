@@ -1,9 +1,18 @@
-import React from "react"
-import Header from '../components/Header'
+import './Dashboard.scss'
+import Carousal from "../components/home/carousal/Carousal"
+import Header from '../components/home/header/Header'
+import Carous from '../components/home/carousal/Carous'
 
 function Dashboard() {
-  return <div>
+  return <div className="dashboard">
+    <div className="dashhead">
     <Header />
+    </div>
+    <div className="carousal">
+    <Carous />
+    </div>
+    
+    
     Dashboard</div>  
 }
 

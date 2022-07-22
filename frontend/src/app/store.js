@@ -6,6 +6,8 @@ import singleUserSlice from '../features/admin/users/single/singleUserSlice';
 import addStaffSlice from '../features/admin/staff/register/addStaffSlice'
 import getStaffsSlice from '../features/admin/staff/getStaffsSlice'
 import addDesignationSlice from '../features/admin/designation/addDesignationSlice';
+import addBranchSlice from '../features/admin/branch/addBranchSlice'
+import getBatchsSlice from '../features/admin/batch/getBatchsSlice'
 
 export const store = configureStore({
   reducer: {
@@ -15,6 +17,8 @@ export const store = configureStore({
     fetchUser: singleUserSlice,
     addStaff: addStaffSlice,
     viewStaffs: getStaffsSlice,
-    allDesignations: addDesignationSlice    
+    allDesignations: addDesignationSlice,
+    allBranchs:addBranchSlice,
+    allBatchs: getBatchsSlice,
   },
 });

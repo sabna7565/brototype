@@ -5,7 +5,7 @@ import {useNavigate} from 'react-router-dom'
 import {toast} from 'react-toastify'
 import {login, reset} from '../features/auth/authSlice'
 import Spinner from '../components/Spinner'
-import Header from '../components/Header'
+import Header from '../components/home/header/Header'
 
 
 function Login() {
