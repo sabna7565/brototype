@@ -10,6 +10,7 @@
             width: 100%;
             align-items: center;
             margin-left: 40%;
+            margin-top: 50px;
 
             .title{
                 margin-top: 15px;
@@ -18,7 +19,7 @@
         }  
 
         .addlocation{
-            margin-left: 70%;
+            margin-left: 60%;
             .viewButton{
                 padding: 6px;
                 font-size: 15px;
@@ -27,7 +28,6 @@
                 background-color: black;
                 cursor: pointer;
                 margin-top: 2%;
-                margin-left: 29%;
                 border: 1px solid rgba(15, 15, 77, 0.295);
             }
        }

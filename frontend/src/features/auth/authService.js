@@ -1,4 +1,5 @@
 import axios from 'axios'
+import * as api from '../../api/index'
 
 const API_URL = '/api/users/'
 
@@ -10,7 +11,8 @@ const register = async (userData) => {
         localStorage.setItem('user', JSON.stringify(response.data))
     }
 
-    return response.data
+    return response
+    .data
 }
 
 //Login user
@@ -24,13 +26,28 @@ const login = async (userData) => {
     return response.data
 }
 
+//update student details
+const editUser = async (token, userData) => {
+    const config = {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    };
+    const { data } = await api.editUserDetails(userData, config);
+    if (data) {
+        localStorage.setItem('user', JSON.stringify(data));
+    }
+    return data;
+}
+
+
 // logout user
 const logout = () => {
     localStorage.removeItem('user')
 }
 
 const authService = {
-    register,login, logout,
+    register,login, logout, editUser,
 }
 
 export default authService

@@ -73,11 +73,11 @@ const Addbranch = () => {
     <section className="get-in-touch">
     <h4 className="title">Add Branch</h4>
     <form onSubmit={onSubmit} className="contact-form row">
-       <div className="form-field col x-50">
-          <input id="name" className="input-text js-input" type="text" name='branch_name' required placeholder='name' onChange={onChange} value={formData.name} />
+       <div className="form-field col x-100">
+          <input id="name" className="input-text js-input" type="text" name='branch_name' required placeholder='branch name' onChange={onChange} value={formData.name} />
           {/* <label className="label" for="name">Branch Name</label> */}
        </div>
-       <div className="form-field col x-50" >
+       <div className="form-field col x-100" >
         <select name="location" id="" className="input-text js-input" onChange={onChange} value={formData.location}>
             <option value="">Select Location</option>
             <option value="ernakulam">Ernakulam</option>

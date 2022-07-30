@@ -30,6 +30,10 @@ const staffSchema = mongoose.Schema({
     type: String,
     required: [true, 'Please add a password']
    },
+   sprofile: {
+      type: String,
+      
+   }
   
 }, 
 {

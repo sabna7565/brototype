@@ -1,0 +1,31 @@
+.carous{
+   margin-top: 25px;
+   justify-content: center;
+   align-items: center;
+   background-color: rgb(153, 151, 149);
+   margin-bottom: 20px;
+
+   .d-block{
+      margin-left: 25%;
+      margin-right: 20%;
+      margin-top: 1%;
+      background-color: rgb(27, 63, 63);
+      width: 700px;
+      height: 400px;
+   }
+
+   .namediv{
+      margin-bottom: 3%;
+      height: 50px;
+      margin-left: 50px;
+      width: 63%;
+      border: none;
+
+      .content{
+         color: black;
+         font-size: 30px;
+         height: 25px;
+         margin-bottom: -15px;
+      }
+   }
+}

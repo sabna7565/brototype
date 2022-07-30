@@ -13,10 +13,10 @@ import {useNavigate} from 'react-router-dom'
   const navigate = useNavigate()
 
   const [formData, setFormData] = React.useState({
-    batch_name:'', location:'', advisor:'', starting:'',
+    batch:'', location:'', advisor:'', starting:'',
   })
 
-  const {batch_name, location, advisor, starting, } = formData;
+  const {batch, location, advisor, starting, } = formData;
 
   const onChange = (e) => {
     setFormData((prevState) => ({
@@ -28,12 +28,12 @@ import {useNavigate} from 'react-router-dom'
   const onSubmit=(e)=>{
     e.preventDefault();
     const batchData = {
-      batch_name, location, advisor, starting
+      batch, location, advisor, starting
     };
   dispatch(registerBatch(batchData));
   
   }
-  const {batch, isLoding, isSuccess, isError, message } = useSelector((state) => state.allBatchs);
+  const {batchs, isLoding, isSuccess, isError, message } = useSelector((state) => state.allBatchs);
 
 
   useEffect(() => {
@@ -42,27 +42,28 @@ import {useNavigate} from 'react-router-dom'
       return;
     }
 
-    if(isSuccess && batch) {
+    if(isSuccess && batchs) {
       navigate('/admin/batch')
    }
 
     dispatch(reset());
-  }, [batch, isError, isSuccess, message, dispatch]);
+  }, [batchs, isError, isSuccess, message, dispatch]);
 
   if (isLoding) {
     return <Spinner />
   }
 
   return (
-    <div className='content'>
+    <div className='bcontent'>
       <div className="containers">  
   <form id="contact" onSubmit={onSubmit}>
     <h3>Add Batch Details</h3>
     <fieldset>
-      <input placeholder="Batch name" name='batch_name' value={batch_name} onChange={onChange} type="text" tabindex="1" required autofocus />
+      <input placeholder="Batch name" name='batch' value={batch} onChange={onChange} type="text" tabindex="1" required autofocus />
     </fieldset>
     <fieldset>
       <select name='location' value={location} onChange={onChange} tabindex="2" required>
+      <option value=" ">select</option>
         <option value="ernakulam">Ernakulam</option>
         <option value="calicut">Calicut</option>
         <option value="trivandrum">Trivandrum</option>

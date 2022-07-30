@@ -34,9 +34,9 @@ function DataTable () {
     }
 
     const columns = [
-      { field: '', headerName: 'No', width: 50 },
+      { field: 'no', headerName: 'No', width: 50, color: 'black' },
       // { field: '_id', headerName: 'User-ID', width: 150 },
-      { field: 'name', headerName: 'Name', width: 150,
+      { field: 'name', headerName: 'Name', width: 150, 
         // renderCell:(params)=>{
         //   return(
         //     <div className="username">
@@ -52,11 +52,12 @@ function DataTable () {
       // { field: 'address', headerName: 'Address', width: 200 },
       { field: 'email', headerName: 'Email', width: 150 },
       { field: 'mobile', headerName: 'Mobile', width: 150 },
-      { field: 'action', headerName: 'Action', width: 150, renderCell:(params)=>{
+      { field: 'action', headerName: 'Action', width: 180, renderCell:(params)=>{
         return(
+
             <div className="cellAction">
               <Link to={`/admin/users/${params.id}`}>
-                <button className="viewButton" id={params.id ? params.id:""}>View</button>
+                <button className="stviewButton" id={params.id ? params.id:""}><span className='vsspan'>View</span></button>
                 </Link>
                 <Link to="" style={{ textDecoration: "none" }}>
                 <button onClick={()=>{dispatch(removeUser(params.id))}} className="deleteButton">Delete</button>
@@ -70,7 +71,7 @@ function DataTable () {
   
     
   return (
-    <div style={{ height: 400, width: '100%' }} className='datable'>
+    <div style={{ height: 400, width: '100%', color: 'black' }} className='datable'>
          <DataGrid
         rows={rows}
         columns={columns}

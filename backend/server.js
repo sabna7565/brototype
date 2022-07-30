@@ -17,6 +17,8 @@ app.use(cors({ origin: true, credentials: true }));
 app.use('/api/goals', require('./routes/goalRoutes'))
 app.use('/api/users', require('./routes/userRoutes'))
 app.use('/api/admin', require('./routes/adminRoutes'))
+app.use('/api/staff', require('./routes/staffRoutes'))
+
 
 // Error Middleware
 app.use(notFound)

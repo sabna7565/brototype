@@ -102,7 +102,7 @@ const onLogout = () => {
 
         <li>
           <ExitToAppIcon className='icon'/>
-          <button onClick={onLogout}>
+          <button onClick={onLogout} className="but">
            Logout  
           </button> 
         </li></ul></div>

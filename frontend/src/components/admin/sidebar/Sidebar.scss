@@ -59,7 +59,7 @@
                         color: black;
                     }
                 }
-
+                
                 span{
                     font-size: 15px;
                     font-weight: 600;
@@ -71,13 +71,15 @@
                     }
                 }
 
-                button{
+                .but{
                     font-size: 15px;
                     font-weight: 600;
                     color: rgb(194, 186, 186);
                     margin-left: 10px;
                     background-color: black;
                     border: none;
+                    width: 50px;
+                    border-radius: 1px;
 
                     &:hover{
                         color: black;

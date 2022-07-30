@@ -1,0 +1,25 @@
+.staffsinglereview{
+    margin-top: 25px;
+    .title{
+        font-size: 25px;
+        font-weight: bold;
+        text-decoration: underline;
+        justify-content: center;
+        align-items: center;
+        margin-left: 15em;
+        height: 80px;
+        padding-top: 20px;
+        text-transform: uppercase;
+    
+        .addgrp{
+          margin-left: 137px;
+          margin-top: 18px;
+          height: 36px;
+          width: 126px;
+          color: white;
+          text-decoration: none;
+          font-size: 15px;
+          background-color: rgb(25, 65, 48);
+        }
+      }
+}

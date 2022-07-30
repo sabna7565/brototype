@@ -3,7 +3,6 @@ import adminAuthService from './adminAuthService'
 
 // Get user from localStorage
 const admin = JSON.parse(localStorage.getItem('admin'))
-console.log("details",admin);
 const initialState = {
     admin: admin ? admin : null,
     // admin: null,

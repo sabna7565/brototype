@@ -44,7 +44,7 @@ dispatch(registerStaff(staffData));
     <div className="row clearfix">
       <div className="">
         <form onSubmit={onSubmit}>
-        <div className="row clearfix">
+        <div className="stfrow clearfix">
             <div className="col_half">
               <div className="input_field"> <span><AccountBoxIcon className='icon'/></span>
                 <input type="text" name="fname" placeholder="First Name" required value={fname} onChange={onChange} />

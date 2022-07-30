@@ -1,0 +1,76 @@
+.staffstudent{
+    margin-top: 25px;
+    .stafstudtitle{
+        font-size: 25px;
+        font-weight: bold;
+        text-decoration: underline;
+        justify-content: center;
+        align-items: center;
+        margin-left: 12em;
+        height: 80px;
+        padding-top: 20px;
+        text-transform: uppercase;
+    }
+    .addgrp{
+        margin-left: 65%;
+        margin-top: 18px;
+        height: 36px;
+        width: 126px;
+        color: white;
+        text-decoration: none;
+        font-size: 15px;
+        background-color: rgb(25, 65, 48);
+      }
+    .studentcontent{
+        display: flex;
+        margin-top: 50px;
+        padding-left: 30px;
+        .first{
+           border: 3px;
+          border-color: rgb(0, 0, 0);
+          border: 10px;
+          border-width: 1em;
+          display: grid;
+          padding: 10px;
+          margin-left: 1px;
+          line-height: 1px;
+          flex: 3.5;
+          height: 500px;
+          .details{
+            font-size: 15px;
+        }
+            
+        }
+        .second{
+            flex: 4.5;
+           border: 3px;
+          border-color: rgb(0, 0, 0);
+          border: 10px;
+          border-width: 1em;
+          display: grid;
+          padding: 10px;
+          line-height: 1px;
+          height: 500px;
+          .details{
+            font-size: 15px;
+        }
+        }
+        .third{
+            flex: 4;
+
+            .studpro{
+                height: 220px;
+
+                .studproimg{
+                    width: 170px;
+                    height: 170px;
+                }
+            }
+            .studproof{
+
+            }
+        }
+    }
+
+
+}

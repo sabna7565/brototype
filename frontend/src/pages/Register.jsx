@@ -11,16 +11,14 @@ function Register() {
     const [formData, setFormData] = useState({
         name: '',
         batch: '', 
-        qualification: '',
         adhar_no: '', 
-        address: '', 
         email: '',
         mobile: '', 
         password: '',
         password2: ' '
     })
     
-    const { name, batch, qualification, adhar_no, address, email, mobile, password, password2 } = formData
+    const { name, batch,  adhar_no,  email, mobile, password, password2 } = formData
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -52,7 +50,7 @@ function Register() {
       //   if(password !== password2) {
       //     toast.error('passwords do not match')
       //   } else {
-           const userData = {name, batch, qualification, adhar_no, address, email, mobile, password}
+           const userData = {name, batch,  adhar_no, email, mobile, password}
 
            dispatch(register(userData))
        // }
@@ -78,15 +76,6 @@ function Register() {
             </div>
             <div className='form-group'>
                <input type="text" className="form-control" id="batch" name='batch' value={batch} placeholder='Enter your batch' onChange={onChange} />
-            </div>
-            <div className='form-group'>
-               <input type="text" className="form-control" id="qualification" name='qualification' value={qualification} placeholder='Enter your qualification' onChange={onChange} />
-            </div>
-            <div className='form-group'>
-               <input type="number" className="form-control" id="adhar_no" name='adhar_no' value={adhar_no} placeholder='Enter your adhar_no' onChange={onChange} />
-            </div>
-            <div className='form-group'>
-               <input type="text" className="form-control" id="address" name='address' value={address} placeholder='Enter your address' onChange={onChange} />
             </div>
             <div className='form-group'>
                <input type="email" className="form-control" id="email" name='email' value={email} placeholder='Enter your email' onChange={onChange} />

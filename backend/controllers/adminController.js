@@ -309,16 +309,16 @@ const fetchBranch = asyncHandler(async (req,res) =>{
 // @desc  batch insertion
 // @route  GET /api/admin/batch/new
 const addBatch = asyncHandler(async (req, res) => {
-    const { batch_name, location, advisor, starting } = req.body
+    const { batch, location, advisor, starting } = req.body
     
 
-    if(!batch_name || !location || !advisor || !starting ) {
+    if(!batch || !location || !advisor || !starting ) {
         res.status(400)
         throw new Error('Please add all fields')
     }
 
     // check if batch exists
-    const batchExists = await Batch.findOne({batch_name})
+    const batchExists = await Batch.findOne({batch})
 
     if(batchExists) {
         res.status(400)
@@ -329,18 +329,19 @@ const addBatch = asyncHandler(async (req, res) => {
     console.log("end day", endday)
 
     //Create batch
-    const batch = await Batch.create({
-        batch_name, location, advisor, starting, ending:endday
+    const batchs = await Batch.create({
+        batch, location, advisor, starting, ending:endday
     })
+    console.log("batchs", batchs)
 
-    if(batch) {
+    if(batchs) {
         res.status(201).json({
-           _id: batch.id,
-           batch_name: batch.batch_name,
-           location: batch.location, 
-           advisor: batch.advisor,
-           starting: batch.starting,
-           ending: batch.ending,
+           _id: batchs.id,
+           batch: batchs.batch,
+           location: batchs.location, 
+           advisor: batchs.advisor,
+           starting: batchs.starting,
+           ending: batchs.ending,
  
         })
     } else {
@@ -349,15 +350,15 @@ const addBatch = asyncHandler(async (req, res) => {
     }
 })
 
-// @desc  Get staff list
+// @desc  Get batch list
 // @route  GET /api/admin/staffs
 // @access Public
 const fetchBatchs = asyncHandler(async (req,res) =>{
-    const batch = await Batch.find({});
+    const batchs = await Batch.find({});
 
-    if(batch) {
+    if(batchs) {
         res.status(200).json({
-            batch,
+            batchs,
         });
     } else {
         res.status(400);

@@ -1,0 +1,61 @@
+.group{
+    margin-top: 25px;
+
+    .body{
+        display: grid;
+        margin-top: 6px;
+    .review{
+        flex: 6;
+        .mygrpss{
+          font-weight: bold;
+          font-size: 15px;
+          color: black;
+          margin-left: 20px;
+          .text{
+          margin-left: 80px;
+          text-decoration: underline;
+          font-weight: bold;
+          font-size: 20px;
+          text-transform: uppercase;
+          color: black;
+        }
+      }
+    }
+
+    .casual{
+        margin-top: 40px;
+        flex: 6;
+
+        .mygrpss{
+          margin-left: 80px;
+          text-decoration: underline;
+          font-weight: bold;
+          font-size: 20px;
+          text-transform: uppercase;
+          color: black;
+        }
+      }
+  }
+  .title{
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: underline;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15em;
+    height: 80px;
+    padding-top: 20px;
+    text-transform: uppercase;
+
+    .addgrp{
+      margin-left: 137px;
+      margin-top: 18px;
+      height: 36px;
+      width: 126px;
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+      background-color: rgb(25, 65, 48);
+    }
+  }
+}

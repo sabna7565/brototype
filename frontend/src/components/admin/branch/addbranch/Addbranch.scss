@@ -46,6 +46,8 @@ textarea{
 }
 
 .row {
+   display: grid;
+
    @include clearfix;
    margin: -20px 0;
    .col {
@@ -67,13 +69,13 @@ textarea{
    
 }
 .addbranch{
-    padding: 1px;
-    -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-    box-shadow: 2px 4px 10px 1px rgba(58, 53, 53, 0.47);
-    margin-left: 14px;
-    margin-right:  auto;   
-    margin-top: 3%;  
-    height: 450px;
+   //  padding: 1px;
+   //  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+   //  box-shadow: 2px 4px 10px 1px rgba(58, 53, 53, 0.47);
+   //  margin-left: 14px;
+   //  margin-right:  auto;   
+   //  margin-top: 3%;  
+   //  height: 450px;
    //  background-color: red;
 
 .get-in-touch {
@@ -97,6 +99,7 @@ textarea{
    .form-field {
       position: relative;
       margin: 15px 0;
+      display: grid;
    }
    .viewsimg{
       height: 100px;

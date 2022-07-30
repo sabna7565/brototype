@@ -20,10 +20,29 @@ import Addbranch from './components/admin/branch/addbranch/Addbranch';
 import Viewbranch from './components/admin/branch/Viewbranch'
 import Batch from './pages/admin/batch/BatchList'
 import Addbatch from './components/admin/batch/addbatch/Addbatch'
+import About from './components/home/intro/Intro'
+import UViewbranch from './components/home/branch/Uviewbranch'
+import Slogin from './components/home/slogin/Slogin'
+import UserLayout from './pages/user/UserLayout';
+import Profile from './components/user/profile/Profile';
+import Details from './components/user/profile/details/Details'
+import StaffLayout from './pages/staff/StaffLayout';
+import Sprofile from './components/staff/profile/Sprofile';
+import Groups from './components/staff/groups/Groups';
+import AddGroup from './components/staff/groups/addgroup/AddGroup'
+import Mystudents from './components/staff/students/mystudents/Mystudents';
+import Reviewstudents from './components/staff/students/reviewstudents/Reviewstudents';
+import Mystudent from './components/staff/students/mystudents/student/Mystudent';
+import Batchreview from './components/staff/students/mystudents/student/Batchreview';
+import Task from './components/staff/task/Task';
+import Addtask from './components/staff/task/add/Addtask';
+import Viewtask from './components/staff/task/view/Viewtask';
 
 function App() {
 const admin = useSelector((state) => state.adminauth.admin)
 const user = useSelector((state) => state.auth.user)
+const staff = useSelector((state) => state.staffauth.staff)
+
 
   return (
     <>
@@ -32,7 +51,46 @@ const user = useSelector((state) => state.auth.user)
       <Routes>
         <Route path='/' element={<Dashboard />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/slogin' element={<Slogin />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/:location' element={<UViewbranch />} />
+
+        {/* ====================User======================= */}
+
+      <Route path='/user'>            
+        <Route path= '' element={user ? <UserLayout children={<Profile />}/> :  <Login /> } />
+        <Route path='more' element={user ? <UserLayout children={<Details />}/> :  <Login /> } />
+        <Route path='task' element={user ? <UserLayout children={<Profile />}/> :  <Login /> } />
+        <Route path='review' element={user ? <UserLayout children={<Profile />}/> :  <Login /> } />
+        <Route path='payment' element={user ? <UserLayout children={<Profile />}/> :  <Login /> } />
+      </Route>
+
+       {/* ====================Staff======================= */}
+       <Route path='/staff'>            
+       <Route path= '' element={staff ? <StaffLayout children={<Sprofile />}/> :  <Slogin /> } />
+
+        <Route path='group'>
+        <Route index element={staff ? <StaffLayout children={<Groups />}/> :  <Slogin /> } />
+        <Route path='new' element={staff ? <StaffLayout children={ <AddGroup />} /> : <Slogin /> } />
+        <Route path=':batch/:domain' element={staff ? <StaffLayout children={ <Mystudents />} /> : <Slogin /> } />
+        <Route path=':batch/:domain/:id' element={staff ? <StaffLayout children={ <Mystudent />} /> : <Slogin /> } />
+        <Route path=':batch/:domain/:id/review' element={staff ? <StaffLayout children={ <Batchreview />} /> : <Slogin /> } />
+        <Route path='reviewstudents' element={staff ? <StaffLayout children={ <Reviewstudents />} /> : <Slogin /> } />
+        </Route>
+
+        <Route path='task'>
+        <Route index element={staff ? <StaffLayout children={<Task />}/> :  <Slogin /> } />
+        <Route path=':batch/:domain' element={staff ? <StaffLayout children={ <Viewtask />} /> : <Slogin /> } />
+        <Route path='new/:batch/:domain' element={staff ? <StaffLayout children={ <Addtask />} /> : <Slogin /> } />
+        </Route>
+
+
+
+        <Route path='review' element={staff ? <StaffLayout children={<Profile />}/> :  <Slogin /> } />
+        <Route path='payment' element={staff ? <StaffLayout children={<Profile />}/> :  <Slogin /> } />
+        </Route>
+
 
         {/* ====================Admin======================= */}
 
@@ -80,19 +138,7 @@ const user = useSelector((state) => state.auth.user)
 
 
         </Route>
-        
-        {/* ====================Staff======================= */}
-        <Route path='staff'>            
-        <Route index element={<AdminLogin />} />
-        <Route path='home' element={<AdminDashboard />} />
-        <Route path='users'>
-          <Route index element={<List />} />
-          <Route path=':userId' element={<Single />} />
-          <Route path='new' element={<New />} title="Add new sttaff"/>
-        </Route>
-        </Route>
-
-
+      
       </Routes>
      </div>
     </Router>

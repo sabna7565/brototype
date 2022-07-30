@@ -16,7 +16,7 @@ const List = () => {
         <div className="listContainer">
         
          <div className="studtitle">
-         <h1 className='title'>Student List</h1>
+         <h1 className='sttitle'>Student List</h1>
          </div>
          <DataTable className="studdatatable"/>
         </div>

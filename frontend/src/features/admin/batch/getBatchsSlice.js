@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import getBatchsService from './getBatchsService'
 
 const initialState = {
-    batch: [],
+    batchs: [],
     isError: false,
     isSuccess: false,
     isLoading: false,
@@ -20,9 +20,9 @@ export const getBatchs = createAsyncThunk('fetch-Batchs', async (_, thunkAPI) =>
 });
 
 //insert batch
-export const registerBatch = createAsyncThunk('register-Batch', async (batch, thunkAPI) => {
+export const registerBatch = createAsyncThunk('register-Batch', async (batchs, thunkAPI) => {
     try {        
-        return await getBatchsService.insertBatch(batch)
+        return await getBatchsService.insertBatch(batchs)
     } catch (error) {
         const message = (error.response && error.response.data && error.response.data.message) || error.message || error.toString() || 'Something went wrong';
         return thunkAPI.rejectWithValue(message)
@@ -45,7 +45,7 @@ export const getBatchsSlice = createSlice({
             state.isLoading = true
         },
         [getBatchs.fulfilled]: (state, action) => {
-            state.batch = action.payload
+            state.batchs = action.payload
             console.log("action", action.payload)
             state.isLoading = false
             state.isSuccess = true
@@ -55,7 +55,7 @@ export const getBatchsSlice = createSlice({
             state.isLoading = false
             state.isSuccess = false
             state.isError = true
-            state.batch = null
+            state.batchs = null
         },
         [registerBatch.pending]: (state) => {
             state.isLoading = true            
@@ -63,13 +63,13 @@ export const getBatchsSlice = createSlice({
         [registerBatch.fulfilled]: (state, action) => {
             state.isLoading = false
             state.isSuccess = true
-            state.batch = action.payload
+            state.batchs = action.payload
         },
         [registerBatch.rejected]: (state, action) => {
             state.isLoading = false
             state.isError = true
             state.message = action.payload
-            state.batch = null
+            state.batchs = null
         }
     },
 });

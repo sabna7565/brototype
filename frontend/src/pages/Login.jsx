@@ -6,6 +6,8 @@ import {toast} from 'react-toastify'
 import {login, reset} from '../features/auth/authSlice'
 import Spinner from '../components/Spinner'
 import Header from '../components/home/header/Header'
+import { Link } from 'react-router-dom'
+import './Ulogin.scss'
 
 
 function Login() {
@@ -27,7 +29,7 @@ function Login() {
                toast.error(message)
             }
       
-            if(isSuccess || user) {
+            if(isSuccess && user) {
                navigate('/')
             }
       
@@ -57,32 +59,43 @@ function Login() {
         return <Spinner />
     }
 
-      return <>
+      return (
+      <div>
         <Header />
-        <section className='heading'>
-           <h1>
-            <FaSignInAlt /> Login
-           </h1> 
-           <p>Enter your credentials</p>
-        </section>
-    
-        <section className='form'>
-            <form onSubmit={onSubmit}>
+        <div className="cont">
+        <form onSubmit={onSubmit} >
+
+        <div className="fform sign-in">
+            <h2>Enter Login credentials</h2>
+            <label>
+                <span style={{color: 'white'}}>Email</span>
+                <input type="email"  id="email" name='email' value={email} placeholder='Enter your email' onChange={onChange}/>
+            </label>
+            <label>
+                <span style={{color: 'white'}}>Password</span>
+                <input type="password" id="password" name='password' value={password} placeholder='Enter your password' onChange={onChange}/>
+            </label>
+            <p className="forgot-pass">Forgot password?</p>
+            <button type="submit" className="submit">Sign In</button>
+        </div>
+        <div className="sub-cont">
+            <div className="img">
+                <div className="img__text m--up">
+                 
+                    <h3>For Staff Login? Click the below button!</h3>
+                </div>
+               <Link to="/slogin" >
+                <div className="img__btn" >
+                    <span className="m--up">Sign In</span>
+                </div></Link>
+            </div>
             
-                <div className='form-group'>
-                   <input type="email" className="form-control" id="email" name='email' value={email} placeholder='Enter your email' onChange={onChange} />
-                </div>
-                <div className='form-group'>
-                   <input type="password" className="form-control" id="password" name='password' value={password} placeholder='Enter your password' onChange={onChange} />
-                </div>
-              
-                <div className="form-group">
-                    <button type="submit" className='btn btn-block'>Login</button>
-                </div>
-            </form>
-        </section>
-      </>
-    
+        </div>
+        </form>
+
+    </div>
+      </div>
+      )
     }
     
 export default Login

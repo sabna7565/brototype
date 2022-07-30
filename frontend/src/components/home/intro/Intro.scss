@@ -1,0 +1,42 @@
+.videos{
+    -webkit-box-shadow: 2px 4px 10px 1px rgba(2, 2, 2, 4.47);
+    box-shadow: 2px 4px 10px 1px rgb(7, 7, 7); 
+    height: 750px;
+    width: 100%;
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 30px;
+
+    .youtube{
+        flex: 8;
+        height: 400px;
+        padding-left: 40px;
+
+        .secondcut{
+            margin-top: 50px;
+            display: flex;
+            width: 100%;
+        }
+    }
+    .description{
+        flex: 4;
+        height: 300px;
+        padding:60px;
+        color: black;
+        font-weight: bold;
+        font-size: 40px;
+    }
+    .from{
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 30px;
+    }
+    .more{
+        background-color: black;
+        color: white;
+        margin-left: 40%;
+        width: 150px;
+        margin-top: -30px;
+        font-weight: bold;
+    }
+}

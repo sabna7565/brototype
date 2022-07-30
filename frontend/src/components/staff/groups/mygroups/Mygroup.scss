@@ -1,0 +1,40 @@
+.cmygrp{
+    margin-top: 20px;
+    -webkit-box-shadow: 2px 4px 10px 1px rgba(4, 4, 4, 4.47);
+    box-shadow: 2px 4px 10px 1px rgb(7, 7, 7);
+    width: 700px;
+    margin-left: 30px;
+
+    .firstrow{
+        background-color: rgb(25, 65, 48);
+        color: white;
+        font-weight: bold;
+        height: 40px;
+        padding: 30px;
+        justify-content: center;
+        align-items: center;
+
+        >th{
+            padding-left: 40px;
+            padding-top: 1px;
+            height: 30px;
+        }        
+    }
+    tr{
+        line-height: 35px;
+        height: 40px;
+    >td{
+        padding-left: 40px;
+
+    }   
+  }
+  .viewmygrpbutton{
+    border-radius: 5px;
+    color: darkblue;
+    cursor: pointer;
+    border: 1px solid rgba(15, 15, 77, 0.295);
+    width: 100px;
+    margin-left: -25px;
+    padding-left: 0px;
+  }
+}

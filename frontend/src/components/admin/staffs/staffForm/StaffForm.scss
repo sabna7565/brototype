@@ -9,6 +9,8 @@ body {
 	background: #f2f2f2;
 }
 .clearfix {
+  margin-left: 2px;
+  display: flex;
 	&:after {
 		content: "";
 		display: block;
@@ -20,7 +22,7 @@ body {
 .staffform{
 .form_wrapper {
 	background: #fff;
-	width: 400px;
+	width: 450px;
 	max-width: 100%;
 	box-sizing: border-box;
 	padding: 25px;

@@ -9,8 +9,159 @@
     }
     .carousal{
         margin-top: 10px;
-        height: 400px;
+        height: 420px;
         -webkit-box-shadow: 2px 4px 10px 1px rgba(2, 2, 2, 4.47);
         box-shadow: 2px 4px 10px 1px rgb(7, 7, 7); 
     }
+    .videos{
+        -webkit-box-shadow: 2px 4px 10px 1px rgba(2, 2, 2, 4.47);
+        box-shadow: 2px 4px 10px 1px rgb(7, 7, 7); 
+        height: 400px;
+        width: 100%;
+        display: flex;
+        margin-top: 50px;
+
+        .youtube{
+            flex: 8;
+            height: 400px;
+        }
+        .description{
+            flex: 4;
+            height: 300px;
+            padding:60px;
+            color: black;
+            font-weight: bold;
+            font-size: 40px;
+        }
+        .from{
+            font-size: 16px;
+            font-weight: normal;
+        }
+        .more{
+            background-color: black;
+            color: white;
+            margin-left: 40%;
+            width: 150px;
+            margin-top: -30px;
+            font-weight: bold;
+        }
+    }
+    .branch{
+        height:340px;
+        -webkit-box-shadow: 2px 4px 10px 1px rgba(2, 2, 2, 4.47);
+        box-shadow: 2px 4px 10px 1px rgb(7, 7, 7); 
+        margin-top: 50px;
+        margin-left: 40px;
+        width: 96%;
+    }
+    .placement{
+        height:400px;
+        -webkit-box-shadow: 2px 4px 10px 1px rgba(2, 2, 2, 4.47);
+        box-shadow: 2px 4px 10px 1px rgb(7, 7, 7); 
+        margin-top: 50px;
+        
+    }
+    .domain{
+        height: 480px;
+        -webkit-box-shadow: 2px 4px 10px 1px rgba(2, 2, 2, 4.47);
+        box-shadow: 2px 4px 10px 1px rgb(7, 7, 7);
+        margin-top: 30px;
+        .heading{
+            text-decoration: underline;
+            align-items: center;
+            padding-top: 10px;
+        }
+
+        .firstrow{
+            margin-top: -11px;
+            display: flex;
+            flex: 12;
+            height: 200px;
+            margin-left: 40px;
+
+
+            .first{
+                flex: 3;
+                width: 100%;
+                .imag{
+                    width: 90%;
+                    height: 90%;
+
+            }
+            }
+            .second{
+                flex: 3;
+                width: 100%;
+                .imag{
+                 width: 90%;
+                height: 90%;
+                margin-left: 10px;
+
+            }
+            }
+            .third{
+                flex: 3;
+                width: 100%;
+                .imag{
+                    width: 90%;
+                    height: 90%;
+                    margin-left: 10px;
+            }
+            }
+            .four{
+                flex: 3;
+                width: 100%;
+                .imag{
+                    width: 90%;
+                    height: 90%;
+            }
+            }
+          
+        }
+
+        .secondrow{
+            display: flex;
+            flex: 12;
+            height: 200px;
+            margin-left: 40px;
+
+            .first{
+                flex: 3;
+                width: 100%;
+                .imag{
+                    width: 90%;
+                    height: 90%;
+      
+                }
+            }
+            .second{
+                flex: 3;
+                width: 100%;
+                .imag{
+                    width: 90%;
+                    height: 90%;
+                    margin-left: 10px;
+            }
+            }
+            .third{
+                flex: 3;
+                width: 100%;
+                .imag{
+                    width: 90%;
+                    height: 90%;
+                    margin-left: 10px;
+            }
+            }
+            .four{
+                flex: 3;
+                width: 100%;
+                .imag{
+                    width: 90%;
+                    height: 90%;
+    
+                }
+            }          
+        }
+    }
+
 }

@@ -1,6 +1,7 @@
 .headers{
      width: 100%;
     color: white;
+    z-index: 20;
     
     .firstdiv{
         height: 40px;
@@ -21,7 +22,7 @@
     }
 
     .seconddiv{
-        height: 75px;
+        height: 74px;
         background-color: black;
         color: white;
         margin-left: 0px;
@@ -29,14 +30,14 @@
 
         .logo{
             margin-left: 30px;
-            margin-top: 15px;
-            line-height: 15px;
+            margin-top: 5px;
+            line-height: 18px;
             width: auto;
 
             .brotot{
                 color: white;
                 font-size: 35px;
-                height: 30px;
+                height: 36px;
                 font-weight: bold;
                 .bro{
                     background-color: white;

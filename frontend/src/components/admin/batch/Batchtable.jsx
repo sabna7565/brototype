@@ -45,7 +45,7 @@ const BatchTable = () => {
   const dispatch = useDispatch()
   const classes = useStyles();
 
-  const { batch, isLoading, isError, isSuccess, message} = useSelector((state) => state.allBatchs);
+  const { batchs, isLoading, isError, isSuccess, message} = useSelector((state) => state.allBatchs);
   useEffect(() => {
   dispatch(getBatchs())
    }, [dispatch]);
@@ -56,12 +56,12 @@ const BatchTable = () => {
         return
       }
   
-      if (isSuccess && batch) {
-        setBatch(batch.batch)
+      if (isSuccess && batchs) {
+        setBatch(batchs.batchs)
       }
   
       dispatch(reset());
-    }, [batch, isError, isSuccess, message, dispatch]);
+    }, [batchs, isError, isSuccess, message, dispatch]);
   
       if (isLoading) {
         return <Spinner />
@@ -88,7 +88,7 @@ const BatchTable = () => {
             <StyledTableRow key={row._id}>
               <StyledTableCell className='tableCell'>
              
-                {row.batch_name} 
+                {row.batch} 
               </StyledTableCell>
               <StyledTableCell className='tableCell'>{row.location}</StyledTableCell>
               <StyledTableCell className='tableCell'>{row.advisor}</StyledTableCell>

@@ -1,0 +1,70 @@
+.usidebar{
+  
+  height: 100%;
+  display: grid;
+  margin-top: 5px;
+  border-radius: 20px;
+  width: 100%;
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(4, 4, 4, 4.47);
+  box-shadow: 2px 4px 10px 1px rgb(7, 7, 7);
+  background-color: rgb(25, 65, 48);
+  color: white;
+  .pimg{
+    margin-top: 12px;
+    justify-content: center;
+    align-items: center;
+    .welcome{
+      font-size: 20px;
+      justify-content: center;
+      align-items: center;
+      margin-left: 30px;
+      font-weight: bold;
+    }
+    .upro{
+      height: 210px;
+      width: 200px;
+      justify-content: center;
+      align-items: center;
+      margin-left: 8px;
+    }
+    // .picicon{
+    //   width: 80px;
+    //   height: 80px;
+    //   background-color: aqua;
+    //   .inputimg{
+    //     background-color: red;
+    //   }
+    //}
+  }
+
+  .uitems{
+    margin-top: -45px;
+
+    li{
+      list-style: none;
+      height: 50px;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .hr{
+      color: white;
+      font-weight: bold;
+      width: 210px;
+      margin-left: -30px;
+      border-width: 3px;
+      margin-top: 0px;
+    }
+  }
+  span{
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    line-height: 50px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 25px;
+  }
+}

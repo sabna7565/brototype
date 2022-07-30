@@ -3,18 +3,25 @@
     height: 400;
     align-items: center;
 
-
+    
     .cellAction{
         display: flex;
         align-items: center;
         gap: 15px;
     
-        .viewButton{
-            padding: 2px;
+        .stviewButton{
             border-radius: 5px;
             color: darkblue;
             cursor: pointer;
             border: 1px solid rgba(15, 15, 77, 0.295);
+            width: 70px;
+            height: 45px;
+            padding-top: 1px;
+            margin-top: 1px;
+            
+            .vsspan{
+                padding-top: 5px;
+            }
         }
     
         .deleteButton{
@@ -23,6 +30,10 @@
             color: crimson;
             cursor: pointer;
             border: 1px solid rgba(220, 20, 60, 0.342);
+            width: 70px;
+            height: 45px;
+            padding-top: 1px;
+            margin-top: 1px;
         }
     }
 }

@@ -2,16 +2,25 @@ import {FaSignInAlt, FaSignOutAlt, FaUser} from 'react-icons/fa'
 import {Link, useNavigate} from 'react-router-dom'
 import {useSelector, useDispatch} from 'react-redux'
 import {logout, reset} from '../../../features/auth/authSlice'
+import {stafflogout, sreset} from '../../../features/sauth/sauthSlice'
+
 import './Header.scss'
 
 function Header() {
 const navigate = useNavigate()
 const dispatch = useDispatch()
 const {user} = useSelector((state) => state.auth)
+const {staff} = useSelector((state) => state.staffauth)
 
 const onLogout = () => {
   dispatch(logout())
   dispatch(reset())
+  navigate('/')
+}
+
+const onsLogout = () => {
+  dispatch(stafflogout())
+  dispatch(sreset())
   navigate('/')
 }
 
@@ -37,25 +46,72 @@ const onLogout = () => {
           <li>about</li>
           <li>branch</li>
           <li>contact</li>
+
           {user ? ( 
+             <Link to='/user'>
+             <li style={{color:'white'}}>
+                 Profile
+              
+              </li>
+             </Link>  
+          ) : (
+          <>
+          
+         </>)}
+
+         {staff ? ( 
+             <Link to='/staff'>
+             <li style={{color:'white'}}>
+                 Profiles
+              
+              </li>
+             </Link>  
+          ) : (
+          <>
+          
+         </>)}
+
+
+          {user  ? ( 
             <li>
-              <button className='btn' onClick={onLogout}>
-                <FaSignOutAlt /> Logout
+              <button type='button' className='btn' onClick={onLogout}>
+                 Logout
+                </button>  
+            </li> 
+
+            
+          ) : (
+          <>
+          { !staff ? (
+          <Link to='/login'>
+            <li style={{color:'white'}}>
+                Login
+             
+             </li>
+            </Link>  
+
+            ) : (
+              <>
+              </>
+            )
+            }
+          {/* <li>
+            <Link to='/register'>
+               <FaUser /> Register
+              </Link>  
+          </li> */}
+          </>)}
+
+          {staff ? ( 
+            <li>
+              <button type='button' className='btn' onClick={onsLogout}>
+                 Logout
                 </button>  
             </li>
           ) : (
           <>
-            <li>
-            <Link to='/login'>
-               <FaSignInAlt /> Login
-              </Link>  
-          </li>
-          <li>
-            <Link to='/register'>
-               <FaUser /> Register
-              </Link>  
-          </li>
-          </>)}
+          
+         </>)}
           
         </ul>
         </div>

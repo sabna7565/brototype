@@ -13,7 +13,6 @@ const userId = useParams()
   dispatch(getUser(userId.id))
  },[dispatch]);
 
-
   return (
     <div className='single'>      
       <div className="singleContainer">     

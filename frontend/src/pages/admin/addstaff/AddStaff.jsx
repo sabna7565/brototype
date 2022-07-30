@@ -18,10 +18,10 @@ const AddStaff = () => {
   useEffect(() => {
     if (isError) {
       toast.error(message || 'Not Found');
-      return;
+      return
     }
 
-    if(isSuccess || staff) {
+    if(isSuccess && staff) {
       navigate('/admin/staffs')
    }
 

@@ -1,10 +1,9 @@
 const mongoose = require('mongoose')
 
 const batchSchema = mongoose.Schema({
-   batch_name: {
+   batch: {
     type: String,
     required: [true, 'Please add batch name'],
-    unique: true
    },
    location: {
     type: String,

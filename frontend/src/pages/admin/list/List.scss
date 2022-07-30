@@ -2,6 +2,7 @@
     display: flex;
     width: 100%;
     overflow: hidden;
+    margin-top: 30px;
 
     .listContainer{
         flex: 6;
@@ -12,15 +13,15 @@
             margin-left: 40%;
             margin-top: 30px;
 
-            .title{
-                margin-top: 15px;
+            .sttitle{
+                margin-top: 35px;
                 text-decoration: underline;
             }
         }  
         
         .studdatatable{
             margin-left: 10px;
-            margin-top: 20px;
+            margin-top: 580px;
         }
     }
 }

@@ -121,14 +121,14 @@ return (
               <StyledTableCell className='tableCell'>{row.salary}</StyledTableCell>
               <StyledTableCell className='tableCell'>{row.email}</StyledTableCell>
               <StyledTableCell className='tableCell'>{row.mobile}</StyledTableCell>
-              <StyledTableCell className='tableCell'>
+              <StyledTableCell className='tableCell stfbutt'>
                 <span className={`status ${row.status}`}>
 
                 <Link to={`/admin/staffs/${row._id}`}>
-                <button className="viewButton" id={row._id ? row._id:""}>View</button>
+                <button className="stfviewButton" id={row._id ? row._id:""}>View</button>
                 </Link>
                 &nbsp; &nbsp;
-                <button onClick={()=>{dispatch(removeStaff(row._id))}} className="deleteButton">Delete</button>
+                <button onClick={()=>{dispatch(removeStaff(row._id))}} className="stfdeleteButton">Delete</button>
                 </span>                
                 </StyledTableCell>
             </StyledTableRow>

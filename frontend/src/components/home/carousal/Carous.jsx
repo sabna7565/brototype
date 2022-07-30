@@ -2,52 +2,57 @@ import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";
 import 'bootstrap/dist/css/bootstrap.css';
 import Carousel from 'react-bootstrap/Carousel';
 import car1 from '../../../images/home/calicut2.jpeg'
+import car2 from '../../../images/home/calicut5.jpeg'
+import car3 from '../../../images/home/calicut4.jpeg'
+import car4 from '../../../images/home/calicut3.jpeg'
 
+import './Carous.scss'
 
  const Carous = () => {
   return (
-    <div>
+    <div className="carous">
       <div style={{ display: 'block', width: '1000'}}>
           
           <Carousel>
          
 
-              <Carousel.Item interval={1000}>
+              <Carousel.Item interval={3000}>
             <img
-              className="d-block" height={500} width={1500}
+              className="d-block" height={600} width={1000}
               src={car1}
               alt=""
             /> 
 
-            <Carousel.Caption style={{ color: "white" }}>
-                        <h3>
+            <Carousel.Caption style={{ color: "white" }} className="namediv">
+                        <h3 className="content">
                              sabna
                         </h3>
                      
                   </Carousel.Caption>
               </Carousel.Item>
-              <Carousel.Item interval={1000}>
+              <Carousel.Item interval={3000}>
             <img
-              className="d-block" height={500} width={1500}
-              src={car1}
+              className="d-block" height={600} width={1000}
+              src={car3}
               alt=""
             /> 
 
-            <Carousel.Caption style={{ color: "white" }}>
-                        <h3>
+            <Carousel.Caption className="namediv">
+                        <h3 className="content">
                              sabna
                         </h3>
                      
                   </Carousel.Caption>
-              </Carousel.Item> <Carousel.Item interval={1000}>
+              </Carousel.Item>
+              <Carousel.Item interval={3000}>
             <img
-              className="d-block" height={500} width={1500}
-              src={car1}
+              className="d-block" height={600} width={1000}
+              src={car2}
               alt=""
             /> 
 
-            <Carousel.Caption style={{ color: "white" }}>
-                        <h3>
+            <Carousel.Caption style={{ color: "white" }} className="namediv">
+                        <h3 className="content">
                              sabna
                         </h3>
                      
