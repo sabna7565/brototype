@@ -98,24 +98,19 @@ const Sidebar = () => {
         </li>
         </Link>
         <hr className='hr'/>
-        <Link to="/admin/staffs">
+        <Link to="/staff/review">
         <li>
           <span>Review</span>
         </li>        
         </Link>
         <hr className='hr'/>
-        <Link to="/admin/staffs">
+        <Link to="/staff/reviewer">
         <li>
           <span>Reviwer</span>
         </li>
         </Link>
         <hr className='hr'/>
-        <Link to="/admin/staffs">
-        <li>
-          <span>Group</span>
-        </li>
-        </Link>
-        <hr className='hr'/>
+        
         </ul>
         </div>
 

@@ -7,6 +7,8 @@ const Designation = require('../models/designationModel')
 const Branch = require('../models/branchModel')
 const Batch = require('../models/batchModel')
 const Group = require('../models/groupModel')
+const Reviewer = require('../models/reviewerModel')
+const Review = require('../models/reviewModel')
 
 // @desc  Authenticate a staff
 // @route  POST /api/staff/login
@@ -151,7 +153,7 @@ const addGroup = asyncHandler(async (req, res) => {
 // @access Public
 const fetchMyGroups = asyncHandler(async (req,res) =>{
     const staffId = req.staff._id;
-    const group = await Group.find({create: staffId});
+    const group = await Group.find({created: staffId});
 
     if(group) {
         res.status(200).json({
@@ -264,7 +266,113 @@ const addTask = asyncHandler(async (req, res) => {
         throw new Error('Invalid group data')
     }
 })
+
+
+// @desc  reviwer insertion
+// @route  GET /api/staff/reviwer/new
+const addReviewer = asyncHandler(async (req, res) => {
+    const staffId = req.staff._id;
+   
+    const { name, email, mobile, company, designation,  pic} = req.body
+
+    if( !name, !email, !mobile, !company, !designation,  !pic  ) {
+        res.status(400)
+        throw new Error('Please add all fields')
+    }
+
+    // check if reviwer exists
+    const reviewerExists = await Reviewer.findOne({email})
+
+    if(reviewerExists) {
+        res.status(400)
+        throw new Error('reviewer already exists')
+    }
+    
+   
+    //Create reviewer
+    const reviewer = await Reviewer.create({staffId},{
+        name, email, mobile, company, designation,  pic
+    })
+
+    if(reviewer) {
+        res.status(201).json({
+           _id: reviewer.id,
+           name: reviewer.name,
+           email: reviewer.email,
+           mobile: reviewer.mobile,
+           company: reviewer.company,
+           designation: reviewer.designation,
+           pic: reviewer.pic,
+        })
+    } else {
+        res.status(400)
+        throw new Error('Invalid reviwer data')
+    }
+})
+
+// @desc  Get reviewer list
+// @route  GET /api/staff/reviewer
+const fetchReviewer = asyncHandler(async (req,res) =>{
+       const staffId = req.staff._id;
+
+       const reviewer = await Reviewer.find({});
+    if(reviewer) {
+        res.status(200).json({
+            reviewer,
+        });
+    } else {
+        res.status(400);
+        throw new Error('Cannot fetch reviewers due some errors');
+    }
+})
+
+// @desc  Get mygroup student details
+// @route  GET /api/staff/group/mern/id
+const addReview = asyncHandler(async (req,res) =>{
+    const batchname = req.params.batch;
+    const domainname = req.params.domain;
+    const studid = req.params.id;
+    let staffId = req.staff._id;
+    console.log("details", studid, domainname, batchname);
+    const { date, week, status, pending, updations, reviewer, score, seminar, semiscore } = req.body
+
+    if( !date, !week, !status, !pending, !updations, !reviewer, !score, !seminar, !semiscore ) {
+        res.status(400)
+        throw new Error('Please add all fields')
+    }
+
+    let tot = parseInt(score) + parseInt(semiscore);
+    console.log("tot", tot)
+
+     //Create review
+     const review = await Review.create({
+        batch: batchname, domain: domainname, name: studid, date, week, status, pending, updations, reviewer, score, seminar, semiscore, total: tot,
+    })
+    console.log("hdjsjks", review);
+    if(review) {
+        res.status(201).json({
+           _id: review.id,
+           batch: review.batch,
+           domain: review.domain,
+           name: review.name,
+           date: review.date,
+           week: review.week,
+           status: review.status,
+           pending: review.pending,
+           updations: review.updations,
+           reviewer: review.reviewer,
+           score: review.score,
+           seminar: review.seminar,
+           semiscore: review.semiscore,
+           total: review.total,
+        })
+    } else {
+        res.status(400)
+        throw new Error('Invalid review data')
+    }
+})
+
  module.exports = {
     loginStaff, editStaff, fetchBatchs, fetchStaffs, addGroup, fetchMyGroups, fetchReviewGroups, fetchMyStudents,
-    fetchMyStudent, 
+    fetchMyStudent, addReviewer, fetchReviewer, addReview, 
 }

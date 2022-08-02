@@ -26,13 +26,13 @@ const onsLogout = () => {
 
   return (
     <header className='headers'>
-      <div className="firstdiv">
+      {/* <div className="firstdiv">
       <ul className='ulli'>
           <li>about</li>
           <li>branch</li>
           <li>contact</li>
         </ul>
-      </div>
+      </div> */}
       <div className="seconddiv">
         <div className='logo'>
           <Link to='/'><h1 className='brotot'>

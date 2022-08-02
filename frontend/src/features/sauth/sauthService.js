@@ -41,6 +41,17 @@ const group = async (token, groupData) => {
     return data;
 }
 
+//create reviewer
+const reviewer = async (token, reviewerData) => {
+    const config = {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    };
+    const { data } = await api.createReviewer(reviewerData, config);
+    return data;
+}
+
 
 // logout user
 const slogout = () => {
@@ -48,7 +59,7 @@ const slogout = () => {
 }
 
 const sauthService = {
-    slogin, slogout, editStaff, group, 
+    slogin, slogout, editStaff, group, reviewer, 
 }
 
 export default sauthService

@@ -2,7 +2,7 @@ import './Review.scss'
 import Table from 'react-bootstrap/Table';
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
-import * as api from '../../../../api/staff'
+import * as api from '../../../api/staff'
 import {Link, useNavigate} from "react-router-dom"
 
 
@@ -42,7 +42,15 @@ const fetchReviewGroup= async()=>{
 console.log("reviewgroup", Fulldata.group)
 let reviewgroup = Fulldata.group ? Fulldata.group : [];
   return (
-        <div className='mygrp'>
+    <div className='review'>
+      <div className="reviewtitle">
+        <span>Review</span>
+        {/* <Link to="/staff/group/new">
+          <button className='reviewaddgrp'>Create Group</button>
+        </Link> */}
+      </div>
+
+        <div className='reviewmygrp'>
       <Table striped bordered hover size="sm">
       <thead>
         <tr className='firstrow'>
@@ -58,7 +66,7 @@ let reviewgroup = Fulldata.group ? Fulldata.group : [];
           <td>{row.batch}</td>
           <td>{row.domain}</td>
           <td>{row.advisor}</td>
-          <td><Link to="/staff/group/reviewstudents">
+          <td><Link to={`/staff/review/${row.batch}/${row.domain}`}>
             <button className='viewmygrpbutton'>View</button>
           </Link></td>     
         </tr>
@@ -66,7 +74,7 @@ let reviewgroup = Fulldata.group ? Fulldata.group : [];
       </tbody>
     </Table>
     </div>
-    
+  </div> 
   )
 }
 

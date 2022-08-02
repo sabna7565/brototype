@@ -5,7 +5,6 @@ import * as api from '../../../../api/staff'
 import { useDispatch, useSelector } from 'react-redux'
 import {Link, useNavigate} from "react-router-dom"
 
-
 const Mygroup = () => {
   const [Fulldata, setFulldata] = useState({loading:false,done:false})
   const { staff } = useSelector((state) => state.staffauth);

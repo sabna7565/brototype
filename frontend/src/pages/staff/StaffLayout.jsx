@@ -16,7 +16,7 @@ const StaffLayout = ({children}) => {
             {children}
          </div>
          <div className="chat">
-          hii
+          .
         </div>
         </div>
     </div>

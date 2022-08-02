@@ -90,6 +90,10 @@ const userSchema = mongoose.Schema({
       type: String,
       required: [true, 'Please add designation']
    },
+   week: {
+      type: String,
+      default: 'week0'
+   },
    profile_image: {
       type: String,
       required: [true, 'Please add your profile photo']
@@ -104,3 +108,5 @@ const userSchema = mongoose.Schema({
 })
 
 module.exports = mongoose.model('User', userSchema)
+
+

@@ -1,6 +1,18 @@
-.mygrp{
-    margin-top: 30px;
-    margin-top: 20px;
+.reviewstudent{
+    margin-top: 25px;
+    .studtitle{
+        font-size: 25px;
+        font-weight: bold;
+        text-decoration: underline;
+        justify-content: center;
+        align-items: center;
+        margin-left: 12em;
+        height: 80px;
+        padding-top: 20px;
+        text-transform: uppercase;
+    }
+    .studentstable{
+        margin-top: 20px;
     -webkit-box-shadow: 2px 4px 10px 1px rgba(4, 4, 4, 4.47);
     box-shadow: 2px 4px 10px 1px rgb(7, 7, 7);
     width: 700px;
@@ -38,4 +50,16 @@
     margin-left: -25px;
     padding-left: 0px;
   }
+
+  .sviewmygrpbutton{
+    border-radius: 5px;
+    color: rgb(25, 65, 48);
+    cursor: pointer;
+    border: 1px solid rgba(3, 43, 28, 0.295);
+    width: 100px;
+    margin-left: 25px;
+    padding-left: 0px;
+  }
+}
+
 }

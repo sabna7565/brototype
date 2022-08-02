@@ -14,4 +14,7 @@ import axios from 'axios'
  export const viewReviewGroups=(config)=>API.get('/fetch-reviewgroups', config)
  export const viewMyStudents=(config,batchname,domainname)=>API.get(`/fetch-mystudents/${batchname}/${domainname}`, config)
  export const viewMyStudent=(config,batchname,domainname,studid)=>API.get(`/fetch-mystudent/${batchname}/${domainname}/${studid}`, config)
+ export const createReviewer=(reviwerData, config)=>API.post(`/insert-reviewer`, reviwerData, config)
+ export const viewReviewer=(config)=>API.get('/fetch-reviewer', config)
+ export const createReview=(reviewData,config,batchname,domainname,studid)=>API.post(`/insert-review/${batchname}/${domainname}/${studid}`, reviewData, config)
 

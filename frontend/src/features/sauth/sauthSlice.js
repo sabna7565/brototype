@@ -45,6 +45,17 @@ export const createGroup = createAsyncThunk('create-groupn', async (groupData, t
     }
 })
 
+//create reviewer 
+export const createReviewer = createAsyncThunk('create-addreviewer', async (reviwerData, thunkAPI) => {
+    try {
+        const token = thunkAPI.getState().staffauth.staff.token;
+        return await sauthService.reviewer(token, reviwerData);
+    } catch (error) {
+        const message = (error.response && error.response.data && error.response.data.message) || error.message || error.toString()
+        return thunkAPI.rejectWithValue(message)
+    }
+})
+
 //staff logout
 export const stafflogout = createAsyncThunk('staffauth/stafflogout', async () => {
     await sauthService.slogout()
@@ -103,6 +114,20 @@ export const sauthSlice = createSlice({
             state.isError = true
             state.message = action.payload
             state.group = null
+        },
+        [createReviewer.pending]: (state) => {
+            state.isLoading = true
+        },
+         [createReviewer.fulfilled]: (state, action) => {
+            state.reviewer = action.payload
+            state.isLoading = false
+            state.isSuccess = true
+        },
+        [createReviewer.rejected]: (state, action) => {
+            state.isLoading = false
+            state.isError = true
+            state.message = action.payload
+            state.reviewer = null
         },
         [stafflogout.fulfilled]: (state) => {
             state.staff = null

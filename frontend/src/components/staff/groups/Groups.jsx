@@ -1,7 +1,6 @@
 import React from 'react'
 import './Groups.scss'
 import Mygroup from './mygroups/Mygroup'
-import Review from './reviewgroup/Review'
 import {Link, useNavigate} from "react-router-dom"
 
 
@@ -20,12 +19,12 @@ const Groups = () => {
           <span className='text'>My Groups</span></div>
           <Mygroup />
       </div>
-      <div className="casual">
+      {/* <div className="casual">
         <div className="mygrpss">
           <span>Review Groups</span>
           </div> 
           <Review />
-      </div>
+      </div> */}
      </div>
     </div>
   )
