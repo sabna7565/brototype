@@ -17,4 +17,6 @@ import axios from 'axios'
  export const createReviewer=(reviwerData, config)=>API.post(`/insert-reviewer`, reviwerData, config)
  export const viewReviewer=(config)=>API.get('/fetch-reviewer', config)
  export const createReview=(reviewData,config,batchname,domainname,studid)=>API.post(`/insert-review/${batchname}/${domainname}/${studid}`, reviewData, config)
+ export const updateWeek=(weekData, config, studId)=>API.put(`/change-week/${studId}`, weekData, config)
+ export const viewStudentReview=(config,studId)=>API.get(`/fetch-studentreview/${studId}`, config)
 

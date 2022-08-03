@@ -1,21 +1,33 @@
-.reviewstudent{
+.staffsinglereview{
     margin-top: 25px;
-    .studtitle{
+    .title{
         font-size: 25px;
         font-weight: bold;
         text-decoration: underline;
         justify-content: center;
         align-items: center;
-        margin-left: 12em;
+        margin-left: 15em;
         height: 80px;
         padding-top: 20px;
         text-transform: uppercase;
-    }
-    .studentstable{
+    
+        .addgrp{
+          margin-left: 137px;
+          margin-top: 18px;
+          height: 36px;
+          width: 126px;
+          color: white;
+          text-decoration: none;
+          font-size: 15px;
+          background-color: rgb(25, 65, 48);
+        }
+      }
+
+      .studentreviewtable{
         margin-top: 20px;
     -webkit-box-shadow: 2px 4px 10px 1px rgba(4, 4, 4, 4.47);
     box-shadow: 2px 4px 10px 1px rgb(7, 7, 7);
-    width: 800px;
+    width: 1000px;
     margin-left: 30px;
 
     .firstrow{
@@ -28,17 +40,23 @@
         align-items: center;
 
         >th{
-            padding-left: 40px;
+            justify-content: center;
+            align-items: center;
             padding-top: 1px;
             height: 30px;
+            padding-left: 20px;
         }        
     }
     tr{
+        justify-content: center;
+        align-items: center;
         line-height: 35px;
         height: 40px;
     >td{
-        padding-left: 40px;
-
+        padding-left: 20px;
+        padding-right: auto;
+        justify-content: center;
+        align-items: center;
     }   
   }
   .viewmygrpbutton{
@@ -50,37 +68,5 @@
     margin-left: -25px;
     padding-left: 0px;
   }
-
-  .sviewmygrpbutton{
-    border-radius: 5px;
-    color: rgb(25, 65, 48);
-    cursor: pointer;
-    border: 1px solid rgba(3, 43, 28, 0.295);
-    width: 100px;
-    margin-left: 25px;
-    padding-left: 0px;
-  }
-
-  .updatereviewbtn{
-    border-radius: 5px;
-    color: rgb(25, 65, 48);
-    cursor: pointer;
-    border: 1px solid rgba(3, 43, 28, 0.295);
-    width: 100px !important;
-    margin-left: 25px;
-    padding-left: 0px;
-  }
-
-  .btn {
-    background-color: white;
-    width: 100px;
-    color: rgb(66, 9, 57);
-    border: 1px solid rgba(110, 7, 42, 0.295);
-    font-weight: normal;
-    font-size: 15px;
-    align-items: center;
-    justify-content: center;
 }
-}
-
 }

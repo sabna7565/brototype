@@ -14,3 +14,19 @@ export const UploadImage =async  (pics) => {
       return console.log("picture is not uploaded");
     }
   };
+
+
+  export const UploadFile =async  (file) => {
+    if (file.type === "file/pdf" || file.type === "file/txt") {
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("upload_preset", process.env.REACT_APP_UPLOAD_PRESET);
+      formData.append("cloud_name", process.env.REACT_APP_CLOUD_NAME);
+     const {data} = await axios.post(`https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUD_NAME}/file/upload`,formData)
+     if(data){
+        return data;
+     }
+    } else {
+      return console.log("file is not uploaded");
+    }
+  };

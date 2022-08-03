@@ -82,9 +82,8 @@ const Addreview = () => {
     };
     try{
     let data = await api.createReview(reviewData, config, batch, domain, id,);
-      console.log("submit..", data)
       if (data) {
-       navigate('/staff/review') 
+        navigate('/staff/review/batch/domain') 
       }
      } catch (error) {
       console.log(error)

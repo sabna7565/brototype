@@ -84,6 +84,7 @@ const loginUser = asyncHandler(async (req, res) => {
         experience: user.experience,
         company: user.company,
         designation: user.designation,
+        week: user.week,
         proof_image: user.proof_image,
         profile_image: user.profile_image
     })     

@@ -79,6 +79,13 @@ const onLogout = () => {
         </li>
         </Link>
 
+        <Link to="/admin/syllabus">
+        <li>
+          <WorkIcon className='icon'/>
+          <span>Syllabus</span>
+        </li>
+        </Link>
+
         <Link to="/admin/payments">
         <li>
           <PaymentIcon className='icon'/>

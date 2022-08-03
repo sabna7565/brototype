@@ -333,7 +333,6 @@ const addReview = asyncHandler(async (req,res) =>{
     const domainname = req.params.domain;
     const studid = req.params.id;
     let staffId = req.staff._id;
-    console.log("details", studid, domainname, batchname);
     const { date, week, status, pending, updations, reviewer, score, seminar, semiscore } = req.body
 
     if( !date, !week, !status, !pending, !updations, !reviewer, !score, !seminar, !semiscore ) {
@@ -342,13 +341,11 @@ const addReview = asyncHandler(async (req,res) =>{
     }
 
     let tot = parseInt(score) + parseInt(semiscore);
-    console.log("tot", tot)
 
      //Create review
      const review = await Review.create({
         batch: batchname, domain: domainname, name: studid, date, week, status, pending, updations, reviewer, score, seminar, semiscore, total: tot,
     })
-    console.log("hdjsjks", review);
     if(review) {
         res.status(201).json({
            _id: review.id,
@@ -372,7 +369,45 @@ const addReview = asyncHandler(async (req,res) =>{
     }
 })
 
+//update students week
+const editWeek = asyncHandler(async (req, res) => {
+    const staffId = req.staff._id;
+    const studId = req.params.studId;
+     const{week}=req.body;
+    try{
+        const updateWeekData = {
+            week: req.body.week
+        }
+
+        const user = await User.findByIdAndUpdate(studId, updateWeekData, {
+            new: true
+        })
+        res.status(200).json({
+            success: true,
+            user,          
+        })
+    } catch (error) {
+        res.status(400).json(error);
+    }
+})
+
+//fetch review details of a student
+const fetchStudentReview = asyncHandler(async (req,res) =>{
+    const staffId = req.staff._id;
+    const studId = req.params.id;
+    const studentreview = await Review.find({name: studId});
+ if(studentreview) {
+     res.status(200).json({
+        studentreview,
+     });
+ } else {
+     res.status(400);
+     throw new Error('Cannot fetch reviewers due some errors');
+ }
+})
+
+
  module.exports = {
     loginStaff, editStaff, fetchBatchs, fetchStaffs, addGroup, fetchMyGroups, fetchReviewGroups, fetchMyStudents,
-    fetchMyStudent, addReviewer, fetchReviewer, addReview, 
+    fetchMyStudent, addReviewer, fetchReviewer, addReview, editWeek, fetchStudentReview,
 }

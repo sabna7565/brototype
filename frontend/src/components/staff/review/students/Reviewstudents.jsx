@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {Link, useNavigate, useParams} from "react-router-dom"
 import Table from 'react-bootstrap/Table';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
 
 const Reviewstudents = () => {
@@ -43,21 +45,47 @@ const Reviewstudents = () => {
   }
    console.log("mystudents", Fulldata.users)
   let mystudents = Fulldata.users ? Fulldata.users : [];
+
+  const navigate = useNavigate()
+
+  const handleSelect= async(e)=>{
+    let studId = e.currentTarget.getAttribute('value');
+    let week = e.currentTarget.getAttribute('data-value');
+    try{
+      let data = await api.updateWeek({week:week}, config, studId);
+        if (data) {
+         navigate('/staff/review/') 
+        }
+       } catch (error) {
+        console.log(error)
+      }
+  }
   
+  const rows = [
+    {week: 'week1',},{week: 'week2',},{ week: 'week3',},{ week: 'week4',},
+    {week: 'week5',},{week: 'week6',},{ week: 'week7',},{ week: 'week8',},
+    {week: 'week9',},{week: 'week10',},{ week: 'week11',},{ week: 'week12',},
+    {week: 'week13',},{ week: 'week14',},
+    {week: 'week15',},{ week: 'week16',},
+    {week: 'week17',},{ week: 'week18',},
+    {week: 'week19',},{ week: 'week20',},
+    {week: 'week21',},{ week: 'week22',},
+    {week: 'week23',},{ week: 'week24',},
+  ];
   return (
     <div className='reviewstudent'>
       <div className="studtitle">
-        <span>My Students</span>
+        <span>Review Students</span>
      </div>
 
     <div className="studentstable">
      <Table striped bordered hover size="sm">
       <thead>
         <tr className='firstrow'>
-          <th style={{width: '180px'}}>Batch Name</th>
+          <th style={{width: '150px'}}>Name</th>
           <th>Group</th>
-          <th>Advisor Name</th>
-          <th style={{width: '200px'}}>Action</th>
+          <th>Email Id</th>
+          <th style={{width: '250px'}}>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -72,6 +100,18 @@ const Reviewstudents = () => {
           <Link to={`/staff/review/add/${row.batch}/${row.domain}/${row._id}`}>
             <button className='sviewmygrpbutton'>Add</button>
           </Link>
+         
+          <DropdownButton
+          className='updatereviewbtn'
+          title = "Update week"
+          size="lg"
+            >
+              {rows?.map((ro) => (
+            <Dropdown.Item active  onClick={handleSelect} value={row._id} data-value ={ro.week}>{ro.week}</Dropdown.Item>
+           ))} 
+
+          </DropdownButton>
+
           </td>
         </tr>
         ))}

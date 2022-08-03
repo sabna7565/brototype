@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Addbranch.scss'
-import { UploadImage } from '../../../../utilities/cloudinaryupload'
+import { UploadImage, UploadFile } from '../../../../utilities/cloudinaryupload'
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { addBranch, reset } from '../../../../features/admin/branch/addBranchSlice'
@@ -60,7 +60,7 @@ const Addbranch = () => {
 
       } else {
          setIsLoading(true)
-         const data = await UploadImage(branch_image)
+         const data = await UploadFile(branch_image)
          console.log("data",data)
          formData.branch_image = data.secure_url.toString()
          dispatch(addBranch(formData))

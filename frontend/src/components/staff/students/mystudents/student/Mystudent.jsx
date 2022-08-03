@@ -30,7 +30,6 @@ const Mystudent = () => {
       try {
         // let datas =batchname.batch,domainname.domain
         const {data}=await api.viewMyStudent(config,batch,domain,id);
-        console.log("myshfdjfhdjfhdjfhdj........")
         if (data?.users) {
         setFulldata((prev)=>({
            ...prev,
@@ -49,7 +48,7 @@ const Mystudent = () => {
     <div className='staffstudent'>
         <span className="stafstudtitle">Manifest File</span>
         
-        <Link to={`/staff/group/${mystudents.batch}/${mystudents.domain}/${mystudents._id}/review`}>
+        <Link to={`/staff/review/view/${mystudents.batch}/${mystudents.domain}/${mystudents._id}`}>
           <button className='addgrp'>View Reviews</button>
         </Link>
         

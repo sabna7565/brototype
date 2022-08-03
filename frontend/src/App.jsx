@@ -33,7 +33,7 @@ import AddGroup from './components/staff/groups/addgroup/AddGroup'
 import Mystudents from './components/staff/students/mystudents/Mystudents';
 import Reviewstudents from './components/staff/review/students/Reviewstudents';
 import Mystudent from './components/staff/students/mystudents/student/Mystudent';
-import Batchreview from './components/staff/students/mystudents/student/Batchreview';
+import Batchreview from './components/staff/students/mystudents/student/Viewreview';
 import Task from './components/staff/task/Task';
 import Addtask from './components/staff/task/add/Addtask';
 import Viewtask from './components/staff/task/view/Viewtask';
@@ -41,6 +41,9 @@ import Reviewer from './components/staff/reviewer/Reviewer';
 import Addreviewer from './components/staff/reviewer/addreviewer/Addreviewer';
 import Review from './components/staff/review/Review';
 import Addreview from './components/staff/review/add/Addreview';
+import Viewreview from './components/staff/students/mystudents/student/Viewreview'
+import Syllabus from './components/admin/syllabus/Syllabus'
+import Addsyllabus from './components/admin/syllabus/add/Addsyllabus';
 
 function App() {
 const admin = useSelector((state) => state.adminauth.admin)
@@ -48,7 +51,7 @@ const user = useSelector((state) => state.auth.user)
 const staff = useSelector((state) => state.staffauth.staff)
 
 
-  return (
+ return (
     <>
     <Router>
     <div className='container'>
@@ -98,6 +101,7 @@ const staff = useSelector((state) => state.staffauth.staff)
         <Route index element={staff ? <StaffLayout children={<Review />}/> :  <Slogin /> } />
         <Route path=':batch/:domain' element={staff ? <StaffLayout children={ <Reviewstudents />} /> : <Slogin /> } />
         <Route path='add/:batch/:domain/:id' element={staff ? <StaffLayout children={ <Addreview />} /> : <Slogin /> } />
+        <Route path='view/:batch/:domain/:id' element={staff ? <StaffLayout children={ <Viewreview />} /> : <Slogin /> } />
         </Route>
 
         <Route path='payment' element={staff ? <StaffLayout children={<Profile />}/> :  <Slogin /> } />
@@ -141,12 +145,18 @@ const staff = useSelector((state) => state.staffauth.staff)
            <Route path=':id' element={admin ? <Layout children={<SingleStaff />} /> : <AdminLogin /> } />
         </Route>
 
+        <Route path='syllabus'>
+          <Route index element={admin ? <Layout children={<Syllabus />} /> : <AdminLogin /> }/>
+          <Route path='new' element={admin ? <Layout children={ <Addsyllabus />} /> : <AdminLogin /> } />
+        </Route>
+
         <Route path='placements'>
           <Route index element={admin ? <Layout children={<DesignationList />} /> : <AdminLogin /> }/>
            <Route path=':id' element={admin ? <Layout children={<SingleStaff />} /> : <AdminLogin /> } />
         </Route>
 
 
+   
         </Route>
       
       </Routes>
