@@ -2,7 +2,9 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 const asyncHandler = require('express-async-handler')
 const User = require('../models/userModel')
-const { findByIdAndUpdate } = require('../models/userModel')
+// const { findByIdAndUpdate } = require('../models/userModel')
+const Task = require('../models/taskModel')
+const Syllabus = require('../models/syllabusModel')
 
 // @desc  Register new user
 // @route  POST /api/users
@@ -149,7 +151,7 @@ const editUser = asyncHandler(async (req, res) => {
             company: user.company,
             designation: user.designation,
             proof_image: user.proof_image,
-         
+            week: user.week,
         })
     } catch (error) {
         res.status(400).json(error);
@@ -166,8 +168,6 @@ const getMe = asyncHandler(async (req, res) => {
     res.status(200).json({ id: _id, name, batch, qualification, address, email, mobile, })
 })
 
-
-
 //Generate JWT
 const generateToken = (id) => {
     return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -175,7 +175,97 @@ const generateToken = (id) => {
     })
 }
 
+// @desc  Get task
+// @route  GET /api/user/task
+const fetchSyllabus = asyncHandler(async (req,res) =>{
+    const syllabusWeek = req.params.week;
+    const syllabusDomain = req.params.domain;
+    const smodal = await Syllabus.findOne({week: syllabusWeek,domain:syllabusDomain});
 
+    if(smodal) {
+        res.status(200).json({
+            smodal,
+        });
+
+    } else {
+        res.status(400);
+        throw new Error('Cannot fetch branchs due some errors');
+    }
+})
+
+// @desc  task registration
+// @route  POST /api/user/task/new
+const addTask = asyncHandler(async (req, res) => {
+    const studentId = req.params.id;
+    const syllabusWeek = req.params.week;
+    const syllabusDomain = req.params.domain;
+    const { formFields } = req.body
+
+    
+    if( !formFields ) {
+        res.status(400)
+        throw new Error('Please add all fields')
+    }
+
+    // check if task exists
+    const taskExists = await Task.findOne({student: studentId,domain: syllabusDomain, week:syllabusWeek})
+
+    if(taskExists) {
+        res.status(400)
+        throw new Error('Task already exists')
+    }
+   
+    //Create task
+    const task = await Task.create({
+        student: studentId, domain: syllabusDomain, week:syllabusWeek, curriculam : [...formFields]
+    })
+      if(task) {
+        res.status(201).json({
+           _id: task.id,
+           student: task.student,
+           domain: task.domain,
+           week: task.week, 
+           curriculam: task.curriculam,           
+        })
+    } else {
+        res.status(400)
+        throw new Error('Invalid syllabus data')
+    }
+})
+
+// @desc  Get task list
+// @route  Get /api/user/task
+const fetchTask = asyncHandler(async (req,res) =>{
+    const studentId = req.params.id;
+    const task = await Task.find({student: studentId});
+
+    if(task) {
+        res.status(200).json({
+            task,
+        });
+
+    } else {
+        res.status(400);
+        throw new Error('Cannot fetch branchs due some errors');
+    }
+})
+
+// @desc  Get syllabus list
+// @route  GET /api/admin/syllabus
+const fetchModalTask = asyncHandler(async (req,res) =>{
+    const taskId = req.params.id;
+    const utask = await Task.findById(taskId);
+
+    if(utask) {
+        res.status(200).json({
+            utask,
+        });
+
+    } else {
+        res.status(400);
+        throw new Error('Cannot fetch tasks due some errors');
+    }
+})
 module.exports = {
-    registerUser, loginUser, getMe, editUser,
+    registerUser, loginUser, getMe, editUser, fetchSyllabus, addTask, fetchTask, fetchModalTask,
 }

@@ -8,8 +8,8 @@ import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 
 const Sidebar = () => {
   return (
-    <div className='usidebar'>
-          <div className="pimg">
+    <div className='usersidebar'>
+          <div className="upimg">
           <span className='welcome'>Welcome sabna</span>
           <form action="">
             <img src={nopic} className="upro" />
@@ -17,38 +17,35 @@ const Sidebar = () => {
           </form>
           </div>
            
-          <div className="uitems"><ul>
+          <div className="useritems"><ul>
         <Link to="/user">
         <li>
           <span>Dashboard</span>
         </li></Link>
         
-        <Link to="/admin/staffs">
+        <Link to="/user/task">
         <li>
           <span>Task</span>
         </li>
         </Link>
 
-        <Link to="/admin/staffs">
+        <Link to="/user/review">
         <li>
           <span>Review</span>
         </li>
         </Link>
-        <Link to="/admin/staffs">
+        <Link to="/user/payments">
         <li>
           <span>Payments</span>
         </li>
         </Link>
-        <Link to="/admin/staffs">
+        <Link to="/user/group">
         <li>
           <span>Group</span>
         </li>
         </Link>
-
         </ul>
-        </div>
-
-      
+        </div>      
     </div>
   )
 }

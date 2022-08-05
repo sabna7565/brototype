@@ -19,6 +19,7 @@
 html {
    height: 100%;
    border-color: #000;
+   
 }
 
 textarea{
@@ -45,44 +46,50 @@ textarea{
 
 }
 
-.row {
-   display: grid;
+// .row {
+//    display: grid;
 
-   @include clearfix;
-   margin: -20px 0;
-   .col {
-      padding: 0 20px;
-      float: left;
-      box-sizing: border-box;
-      &.x-50 {
-         width: 50%;
-      }
-      &.x-100 {
-         width: 100%;
-      }
-   }
-}
+//    @include clearfix;
+//    margin: -20px 0;
+//    .col {
+//       padding: 0 20px;
+//       float: left;
+//       box-sizing: border-box;
+//       &.x-50 {
+//          width: 50%;
+//       }
+//       &.x-100 {
+//          width: 100%;
+//       }
+//    }
+// }
 
 .content-wrapper {
    min-height: 100%;
    position: relative;
-   
+
 }
-.addbranch{
+.addbbranch{
    //  padding: 1px;
-   //  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-   //  box-shadow: 2px 4px 10px 1px rgba(58, 53, 53, 0.47);
    //  margin-left: 14px;
    //  margin-right:  auto;   
    //  margin-top: 3%;  
-   //  height: 450px;
-   //  background-color: red;
+   //  height: 100%;
+   padding: 1px;
+    margin-left: 14px;
+    margin-right:  auto;   
+    margin-top: 1%;  
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+   display: flex;
 
 .get-in-touch {
-   max-width: 650px;
-   margin: 25%;
-   top: 50%;
-   transform: translateY(-50%);
+   max-width: 750px;
+   margin-left: 9%;
+   // top: 50%;
+   // transform: translateY(-50%);
   
   .title {
      text-align: center;
@@ -91,7 +98,7 @@ textarea{
      letter-spacing: 3px;
      font-size: 26px;
      line-height: 48px;
-     padding-bottom: 48px;
+     font-weight: bold;
   }
 }
 

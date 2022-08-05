@@ -69,7 +69,7 @@ const Addbranch = () => {
    }
 
   return (
-    <div className='addbranch'>
+    <div className='addbbranch'>
     <section className="get-in-touch">
     <h4 className="title">Add Branch</h4>
     <form onSubmit={onSubmit} className="contact-form row">

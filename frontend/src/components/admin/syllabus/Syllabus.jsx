@@ -1,4 +1,5 @@
 import './Syllabus.scss'
+import React from 'react'
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -13,6 +14,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify'
 import Spinner from '../../Spinner';
 import {Link, useNavigate} from "react-router-dom"
+import * as api from '../../../api/admin'
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import MuiDialogTitle from '@material-ui/core/DialogTitle';
+import MuiDialogContent from '@material-ui/core/DialogContent';
+import MuiDialogActions from '@material-ui/core/DialogActions';
+import Syllabusmodal from './Syllabusmodal'
+
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -32,16 +41,46 @@ const StyledTableRow = withStyles((theme) => ({
   },
 }))(TableRow);
 
-const useStyles = makeStyles({
+const useStyless = makeStyles({
   table: {
     minWidth: 700,
   },
 });
 
-const Syllabus = () => {
-  const classes = useStyles();
 
-  return (
+const Syllabus = () => {
+  const classess = useStyless();
+
+  const [Fulldata, setFulldata] = useState({loading:false,done:false})
+
+useEffect(() => {
+  !Fulldata.done && fetchSyllabus()
+}, [])
+
+const fetchSyllabus= async()=>{
+  setFulldata((prev)=>({ ...prev, loading: true}))
+  try {
+    const {data}=await api.viewSyllabus();
+    if (data?.syllabus) {
+    setFulldata((prev)=>({
+       ...prev,
+       syllabus:data['syllabus'], 
+       loading: false, 
+       done: true}));
+    }
+    } catch (error) {
+    console.log(error)
+  }
+}
+
+console.log("syllabus", Fulldata.syllabus)
+let syllabuses = Fulldata.syllabus ? Fulldata.syllabus : [];
+
+const [open, setOpen] = React.useState(false);
+const [st, setSt] = React.useState(null);
+
+
+return (
     <div className='syllabus'>
       <div className="heading">
       <span className='syllabustitle'>Syllabus</span>
@@ -50,27 +89,25 @@ const Syllabus = () => {
       </div>
       <div className="table">
      <TableContainer component={Paper} className="datatable">
-      <Table className={classes.table} aria-label="customized table">
+      <Table className={classess.table} aria-label="customized table">
         <TableHead>
           <TableRow>
             <StyledTableCell className='tableCell'>Domain</StyledTableCell>
             <StyledTableCell className='tableCell' >Week </StyledTableCell>
-            <StyledTableCell className='tableCell' >Attachment</StyledTableCell>
+            <StyledTableCell className='tableCell' >Action</StyledTableCell>
+
           </TableRow>
         </TableHead>
         <TableBody>
-         
+        {syllabuses?.map((row) => (
             <StyledTableRow >
               <StyledTableCell className='tableCell'>
-             
-                hii 
+                {row.domain} 
               </StyledTableCell>
-              <StyledTableCell className='tableCell'>hii</StyledTableCell>
-              <StyledTableCell className='tableCell'>hii</StyledTableCell>
-              
-             
+              <StyledTableCell className='tableCell'>{row.week}</StyledTableCell>
+              <StyledTableCell className='tableCell' onClick={()=>setSt(row._id)}>  <Syllabusmodal id = {st} /></StyledTableCell>
             </StyledTableRow>
-          
+          ))}
         </TableBody>
       </Table>
     </TableContainer></div>

@@ -4,7 +4,7 @@ import Header from '../../components/home/header/Header'
 
 const UserLayout = ({children}) => {
   return (
-    <div className='grid'>
+    <div className='ugrid'>
      <div className='header'>
         <Header />
          </div>
@@ -15,9 +15,7 @@ const UserLayout = ({children}) => {
          <div className="ucontents">
             {children}
          </div>
-         <div className="chat">
-          hii
-        </div>
+         
         </div>
     </div>
   )

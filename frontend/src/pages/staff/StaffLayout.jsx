@@ -15,9 +15,9 @@ const StaffLayout = ({children}) => {
          <div className="ucontents">
             {children}
          </div>
-         <div className="chat">
+         {/* <div className="chat">
           .
-        </div>
+        </div> */}
         </div>
     </div>
   )

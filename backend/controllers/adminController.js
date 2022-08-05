@@ -7,6 +7,7 @@ const Staff = require('../models/staffModel')
 const Designation = require('../models/designationModel')
 const Branch = require('../models/branchModel')
 const Batch = require('../models/batchModel')
+const Syllabus = require('../models/syllabusModel')
 const moment = require('moment');
 
 
@@ -326,14 +327,11 @@ const addBatch = asyncHandler(async (req, res) => {
     }
 
     let endday= await moment(starting).subtract(-168,'days').format('YYYY/MM/DD')
-    console.log("end day", endday)
 
     //Create batch
     const batchs = await Batch.create({
         batch, location, advisor, starting, ending:endday
     })
-    console.log("batchs", batchs)
-
     if(batchs) {
         res.status(201).json({
            _id: batchs.id,
@@ -365,8 +363,84 @@ const fetchBatchs = asyncHandler(async (req,res) =>{
         throw new Error('Cannot fetch batchs due some errors');
     }
 })
+
+// @desc  syllabus registration
+// @route  POST /api/admin/syllabus/new
+const addSyllabus = asyncHandler(async (req, res) => {
+    const { domain, week, formFields } = req.body
+
+    const dd = req.body.domain;
+    const ww = req.body.week;
+    
+    var questions = {"qtype": req.body.qtype, "question": req.body.question};
+
+    if(!domain || !week || !formFields) {
+        res.status(400)
+        throw new Error('Please add all fields')
+    }
+
+    // check if syllabus exists
+    const syllabusExists = await Syllabus.findOne({domain: dd, week:ww})
+
+    if(syllabusExists) {
+        res.status(400)
+        throw new Error('Syllabus already exists')
+    }
+   
+    //const last = {$push: {curriculam: questions}}
+    //Create user
+    const syllabus = await Syllabus.create({
+        domain, week, curriculam : [...formFields]
+    })
+
+      if(syllabus) {
+        res.status(201).json({
+           _id: syllabus.id,
+           domain: syllabus.domain,
+           week: syllabus.week, 
+           curriculam: syllabus.curriculam,           
+        })
+    } else {
+        res.status(400)
+        throw new Error('Invalid syllabus data')
+    }
+})
+
+
+// @desc  Get syllabus list
+// @route  GET /api/admin/syllabus
+const fetchSyllabus = asyncHandler(async (req,res) =>{
+    const syllabus = await Syllabus.find({});
+
+    if(syllabus) {
+        res.status(200).json({
+            syllabus,
+        });
+
+    } else {
+        res.status(400);
+        throw new Error('Cannot fetch branchs due some errors');
+    }
+})
+
+// @desc  Get syllabus list
+// @route  GET /api/admin/syllabus
+const fetchModalSyllabus = asyncHandler(async (req,res) =>{
+    const syllabusId = req.params.id;
+    const smodal = await Syllabus.findById(syllabusId);
+
+    if(smodal) {
+        res.status(200).json({
+            smodal,
+        });
+
+    } else {
+        res.status(400);
+        throw new Error('Cannot fetch branchs due some errors');
+    }
+})
 module.exports = {
     loginAdmin, getMe, fetchUsers, fetchUser, deleteUser, addStaff, fetchStaffs, 
     deleteStaff, addDesignation, fetchdesignation,  addBranch, fetchBranch,
-    fetchBranchs, addBatch, fetchBatchs, 
+    fetchBranchs, addBatch, fetchBatchs, addSyllabus, fetchSyllabus, fetchModalSyllabus,
 }

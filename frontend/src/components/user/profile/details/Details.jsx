@@ -61,6 +61,10 @@ const Details = () => {
     const userData = { dob, age, domain, gender, father, fcontact, mother, guardian, relationship, address, village, taluk, 
       qualification, college, experience, company, designation, proof_image : Pproof_image ? Pproof_image : user.proof_image, }
       dispatch(updateUser(userData));
+      
+      if(userData) {
+        navigate('/user')     
+      }
   }
 
 
@@ -146,7 +150,7 @@ const Details = () => {
           <div className="input_field"> 
           <img className='adidpic' src={Pproof_image || user.proof_image} />
           <span><p>Upload Proof</p></span></div>
-            <input type="file" className='uploadid' name="proof_image" onChange={(e) => proofUpdation(e.target.files[0])} required  />
+            <input type="file" className='uploadid' name="proof_image"  onChange={(e) => proofUpdation(e.target.files[0])} required  />
            
           </div>
           <input className="button" type="submit" value="Submit" />

@@ -1,7 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const { loginStaff, editStaff, fetchBatchs, fetchStaffs, addGroup, fetchMyGroups, fetchReviewGroups,
-     fetchMyStudents, fetchMyStudent, addReviewer, fetchReviewer, addReview, editWeek, fetchStudentReview, } = require('../controllers/staffController')
+     fetchMyStudents, fetchMyStudent, addReviewer, fetchReviewer, addReview, editWeek, fetchStudentReview, 
+     fetchTask, fetchModalTask } = require('../controllers/staffController')
 
 const {sProtect} = require('../middleware/authMiddleware')
 
@@ -19,6 +20,8 @@ router.get('/fetch-reviewer', sProtect, fetchReviewer)
 router.post('/insert-review/:batch/:domain/:id', sProtect, addReview)
 router.put('/change-week/:studId', sProtect, editWeek)
 router.get('/fetch-studentreview/:id', sProtect, fetchStudentReview)
+router.get('/fetch-task/:id', sProtect, fetchTask)
+router.get('/fetch-modaltask/:id', sProtect, fetchModalTask)
 
 
 module.exports = router

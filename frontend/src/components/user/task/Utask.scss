@@ -1,29 +1,46 @@
-.group{
-    margin-top: 25px;
-    .studtitle{
+.usertask{
+    margin-top: 5px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+      .reviewtitle{
         font-size: 25px;
         font-weight: bold;
         text-decoration: underline;
         justify-content: center;
         align-items: center;
-        margin-left: 12em;
+        margin-left: 15em;
         height: 80px;
         padding-top: 20px;
         text-transform: uppercase;
-    }
-    .studentstable{
-        margin-top: 20px;
+    
+        .utaskaddgrp{
+          margin-left: 225px;
+          margin-top: 1px;
+          height: 36px;
+          width: 126px;
+          color: white;
+          text-decoration: none;
+          font-size: 15px;
+          background-color: rgb(25, 65, 48);
+        }
+      }
+.tasktable{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
     -webkit-box-shadow: 2px 4px 10px 1px rgba(4, 4, 4, 4.47);
     box-shadow: 2px 4px 10px 1px rgb(7, 7, 7);
-    width: 700px;
-    margin-left: 30px;
+    margin-top: 50px;
 
     .firstrow{
         background-color: rgb(25, 65, 48);
         color: white;
         font-weight: bold;
         height: 40px;
-        padding: 30px;
+        padding-left: 30px;
         justify-content: center;
         align-items: center;
 
@@ -38,7 +55,17 @@
         height: 40px;
     >td{
         padding-left: 40px;
-
+    }
+    .uttaskaddgrp{
+      margin-left: 225px;
+      margin-top: 1px;
+      height: 36px;
+      width: 126px;
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+      background-color: rgb(25, 65, 48);
+      border-radius: 0;
     }   
   }
   .viewmygrpbutton{
@@ -51,5 +78,4 @@
     padding-left: 0px;
   }
 }
-
 }

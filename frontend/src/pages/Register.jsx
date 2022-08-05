@@ -15,10 +15,9 @@ function Register() {
         email: '',
         mobile: '', 
         password: '',
-        password2: ' '
     })
     
-    const { name, batch,  adhar_no,  email, mobile, password, password2 } = formData
+    const { name, batch,  adhar_no,  email, mobile, password,  } = formData
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -30,7 +29,7 @@ function Register() {
          toast.error(message)
       }
 
-      if(isSuccess || user) {
+      if(isSuccess && user) {
          navigate('/')
       }
 

@@ -25,4 +25,9 @@ export const viewBranch=(locname)=>API.get(`/fetch-branch/${locname}`)
 export const addBatchs=(batchData)=>API.post('/add-batch', batchData)
 export const viewBatchs=()=>API.get('/fetch-batchs')
 
+export const addSyllabus=(syllabusData)=>API.post('/add-syllabus', syllabusData)
+export const viewSyllabus=()=>API.get('/fetch-syllabus')
+export const ViewSyllabusModal=(syllabusId)=>API.get(`/fetch-syllabusmodal/${syllabusId}`)
+
+
 

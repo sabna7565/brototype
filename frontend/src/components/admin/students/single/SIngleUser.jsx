@@ -6,7 +6,7 @@ import { toast } from 'react-toastify'
 import { reset, } from '../../../../features/admin/users/single/singleUserSlice'
 import Spinner from '../../../Spinner'
 import Sabna from '../../../../images/admin/sabna.jpeg'
-import Adhar from '../../../../images/admin/adhar.jpeg'
+import Adhar from '../../../../images/user/adgar2.png'
 
 
 function SingleUser () {

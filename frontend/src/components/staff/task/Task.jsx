@@ -26,7 +26,7 @@ const Task = () => {
 const fetchCreatedGroup= async()=>{
   setFulldata((prev)=>({ ...prev, loading: true}))
   try {
-    const {data}=await api.viewMyGroups(config);
+    const {data}=await api.viewReviewGroups(config);
     if (data?.group) {
     setFulldata((prev)=>({
        ...prev,
@@ -65,10 +65,8 @@ let mygroup = Fulldata.group ? Fulldata.group : [];
           <td>{row.domain}</td>
         <td style={{display: 'flex'}}><Link to={`/staff/task/${row.batch}/${row.domain}`}>
             <button className='viewmygrpbutton'>View</button>
-          </Link>&nbsp;
-          <Link to={`/staff/task/new/${row.batch}/${row.domain}`}>
-            <button className='sviewmygrpbutton'>Add</button>
           </Link>
+        
           </td>
         </tr>
         ))}

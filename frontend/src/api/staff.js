@@ -19,4 +19,6 @@ import axios from 'axios'
  export const createReview=(reviewData,config,batchname,domainname,studid)=>API.post(`/insert-review/${batchname}/${domainname}/${studid}`, reviewData, config)
  export const updateWeek=(weekData, config, studId)=>API.put(`/change-week/${studId}`, weekData, config)
  export const viewStudentReview=(config,studId)=>API.get(`/fetch-studentreview/${studId}`, config)
+ export const viewTasks=(config,studId)=>API.get(`/fetch-task/${studId}`, config)
+ export const viewTask=(config,taskId)=>API.get(`/fetch-modaltask/${taskId}`, config)
 

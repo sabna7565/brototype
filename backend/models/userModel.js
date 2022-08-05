@@ -11,7 +11,7 @@ const userSchema = mongoose.Schema({
    }, 
    domain: {
       type: String,
-      required: [true, 'Please add your domain']
+      // required: [true, 'Please add your domain']
    }, 
    email: {
     type: String,
@@ -28,67 +28,67 @@ const userSchema = mongoose.Schema({
    },
    dob: {
       type: String,
-      required: [true, 'Please add date of birth']
+      // required: [true, 'Please add date of birth']
    },
    age: {
       type: Number,
-      required: [true, 'Please add your age']
+      // required: [true, 'Please add your age']
    },
    gender: {
       type: String,
-      required: [true, 'Please add gender']
+      // required: [true, 'Please add gender']
    },
    father: {
       type: String,
-      required: [true, 'Please add father name']
+      // required: [true, 'Please add father name']
    },
    fcontact: {
       type: String,
-      required: [true, 'Please add father contact number']
+      // required: [true, 'Please add father contact number']
    },
    mother: {
       type: String,
-      required: [true, 'Please add mother name']
+      // required: [true, 'Please add mother name']
    },
    guardian: {
       type: String,
-      required: [true, 'Please add guardian name']
+      // required: [true, 'Please add guardian name']
    },
    relationship: {
       type: String,
-      required: [true, 'Please add relationship with guardian']
+      // required: [true, 'Please add relationship with guardian']
    },
    address: {
       type: String,
-      required: [true, 'Please add address']
+      // required: [true, 'Please add address']
    }, 
    village: {
       type: String,
-      required: [true, 'Please add village']
+      // required: [true, 'Please add village']
    },
    taluk: {
       type: String,
-      required: [true, 'Please add taluk']
+      // required: [true, 'Please add taluk']
    },
    qualification: {
       type: String,
-      required: [true, 'Please add qualification']
+      // required: [true, 'Please add qualification']
    },
    college: {
       type: String,
-      required: [true, 'Please add college name']
+      // required: [true, 'Please add college name']
    },
    experience: {
       type: String,
-      required: [true, 'Please add experienc(if any)']
+      // required: [true, 'Please add experienc(if any)']
    },
    company: {
       type: String,
-      required: [true, 'Please add company name']
+      // required: [true, 'Please add company name']
    },
    designation: {
       type: String,
-      required: [true, 'Please add designation']
+      // required: [true, 'Please add designation']
    },
    week: {
       type: String,
@@ -96,11 +96,11 @@ const userSchema = mongoose.Schema({
    },
    profile_image: {
       type: String,
-      required: [true, 'Please add your profile photo']
+      // required: [true, 'Please add your profile photo']
    },
    proof_image: {
       type: String,
-      required: [true, 'Please add your adhar card or id card']
+      // required: [true, 'Please add your adhar card or id card']
    },
 }, 
 {

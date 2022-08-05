@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
 
 const taskSchema = mongoose.Schema({
-    batch: {
+    student: {
     type: String,
-    required: [true, 'Please add batch name'],
+    required: [true, 'Please add student id'],
    },
    domain: {
     type: String,
@@ -13,9 +13,9 @@ const taskSchema = mongoose.Schema({
     type: String,
     required: [true, 'Please add week']
    },
-   attachment: {
-    type: String,
-    required: [true, 'Please add attachment file']
+   curriculam: {
+    type: Array,
+    required: [true, 'Please add full tasks']
    },
    
 }, 
@@ -23,4 +23,4 @@ const taskSchema = mongoose.Schema({
    timestamps: true 
 })
 
-module.exports = mongoose.model('Group', groupSchema)
+module.exports = mongoose.model('Task', taskSchema)

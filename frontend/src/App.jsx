@@ -36,7 +36,7 @@ import Mystudent from './components/staff/students/mystudents/student/Mystudent'
 import Batchreview from './components/staff/students/mystudents/student/Viewreview';
 import Task from './components/staff/task/Task';
 import Addtask from './components/staff/task/add/Addtask';
-import Viewtask from './components/staff/task/view/Viewtask';
+import Viewtasks from './components/staff/task/view/Viewtasks';
 import Reviewer from './components/staff/reviewer/Reviewer';
 import Addreviewer from './components/staff/reviewer/addreviewer/Addreviewer';
 import Review from './components/staff/review/Review';
@@ -44,6 +44,9 @@ import Addreview from './components/staff/review/add/Addreview';
 import Viewreview from './components/staff/students/mystudents/student/Viewreview'
 import Syllabus from './components/admin/syllabus/Syllabus'
 import Addsyllabus from './components/admin/syllabus/add/Addsyllabus';
+import Utask from './components/user/task/Utask'
+import Uaddtask from './components/user/task/add/Uaddtask';
+import Viewtask from './components/staff/task/view/Viewtask';
 
 function App() {
 const admin = useSelector((state) => state.adminauth.admin)
@@ -68,8 +71,15 @@ const staff = useSelector((state) => state.staffauth.staff)
       <Route path='/user'>            
         <Route path= '' element={user ? <UserLayout children={<Profile />}/> :  <Login /> } />
         <Route path='more' element={user ? <UserLayout children={<Details />}/> :  <Login /> } />
-        <Route path='task' element={user ? <UserLayout children={<Profile />}/> :  <Login /> } />
-        <Route path='review' element={user ? <UserLayout children={<Profile />}/> :  <Login /> } />
+
+        <Route path='task'>
+        <Route index element={user ? <UserLayout children={<Utask />}/> :  <Login /> } />
+        <Route path=':id/:domain/:week' element={user ? <UserLayout children={<Uaddtask />} /> : <Login /> } />
+        </Route>
+
+        
+
+
         <Route path='payment' element={user ? <UserLayout children={<Profile />}/> :  <Login /> } />
       </Route>
 
@@ -88,8 +98,8 @@ const staff = useSelector((state) => state.staffauth.staff)
 
         <Route path='task'>
         <Route index element={staff ? <StaffLayout children={<Task />}/> :  <Slogin /> } />
-        <Route path=':batch/:domain' element={staff ? <StaffLayout children={ <Viewtask />} /> : <Slogin /> } />
-        <Route path='new/:batch/:domain' element={staff ? <StaffLayout children={ <Addtask />} /> : <Slogin /> } />
+        <Route path=':batch/:domain' element={staff ? <StaffLayout children={ <Viewtasks />} /> : <Slogin /> } />
+        <Route path='view/:id' element={staff ? <StaffLayout children={ <Viewtask />} /> : <Slogin /> } />
         </Route>
 
         <Route path='reviewer'>

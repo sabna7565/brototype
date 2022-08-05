@@ -9,6 +9,7 @@ const Batch = require('../models/batchModel')
 const Group = require('../models/groupModel')
 const Reviewer = require('../models/reviewerModel')
 const Review = require('../models/reviewModel')
+const Task = require('../models/taskModel')
 
 // @desc  Authenticate a staff
 // @route  POST /api/staff/login
@@ -406,8 +407,42 @@ const fetchStudentReview = asyncHandler(async (req,res) =>{
  }
 })
 
+// @desc  Get task list
+// @route  Get /api/staff/task/
+const fetchTask = asyncHandler(async (req,res) =>{
+    const studentId = req.params.id;
+    const tasks = await Task.find({student: studentId});
+
+    if(tasks) {
+        res.status(200).json({
+            tasks,
+        });
+
+    } else {
+        res.status(400);
+        throw new Error('Cannot fetch branchs due some errors');
+    }
+})
+
+// @desc  Get Single Task 
+// @route  GET /api/staff/task
+const fetchModalTask = asyncHandler(async (req,res) =>{
+    const taskId = req.params.id;
+    console.log("taskid", taskId);
+    const task = await Task.findById(taskId);
+
+    if(task) {
+        res.status(200).json({
+            task,
+        });
+
+    } else {
+        res.status(400);
+        throw new Error('Cannot fetch tasks due some errors');
+    }
+})
 
  module.exports = {
     loginStaff, editStaff, fetchBatchs, fetchStaffs, addGroup, fetchMyGroups, fetchReviewGroups, fetchMyStudents,
-    fetchMyStudent, addReviewer, fetchReviewer, addReview, editWeek, fetchStudentReview,
+    fetchMyStudent, addReviewer, fetchReviewer, addReview, editWeek, fetchStudentReview, fetchTask, fetchModalTask,
 }

@@ -31,7 +31,6 @@ const Reviewstudents = () => {
     try {
       // let datas =batchname.batch,domainname.domain
       const {data}=await api.viewMyStudents(config,batch,domain);
-      console.log("myshfdjfhdjfhdjfhdj........")
       if (data?.users) {
       setFulldata((prev)=>({
          ...prev,

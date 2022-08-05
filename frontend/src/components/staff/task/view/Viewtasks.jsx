@@ -1,5 +1,4 @@
-import React from 'react'
-import './Mystudents.scss'
+import './Viewtasks.scss'
 import { useEffect, useState } from 'react'
 import * as api from '../../../../api/staff'
 import { useDispatch, useSelector } from 'react-redux'
@@ -7,8 +6,8 @@ import {Link, useNavigate, useParams} from "react-router-dom"
 import Table from 'react-bootstrap/Table';
 
 
-const Mystudents = () => {
-    const { batch, domain } = useParams()
+ const Viewtasks = () => {
+  const { batch, domain } = useParams()
     const [Fulldata, setFulldata] = useState({loading:false,done:false})
   const { staff } = useSelector((state) => state.staffauth);
 
@@ -42,10 +41,9 @@ const Mystudents = () => {
   }
    console.log("mystudents", Fulldata.users)
   let mystudents = Fulldata.users ? Fulldata.users : [];
-  
+
   return (
-   
-    <div className='group'>
+       <div className='group'>
       <div className="studtitle">
         <span>My Students</span>
      </div>
@@ -54,9 +52,9 @@ const Mystudents = () => {
      <Table striped bordered hover size="sm">
       <thead>
         <tr className='firstrow'>
-          <th style={{width: '180px'}}>Batch Name</th>
+          <th style={{width: '180px'}}>Student Name</th>
           <th>Group</th>
-          <th>Advisor Name</th>
+          <th>Email</th>
           <th style={{width: '150px'}}>Action</th>
         </tr>
       </thead>
@@ -66,7 +64,7 @@ const Mystudents = () => {
           <td>{row.name}</td>
           <td>{row.domain}</td>
           <td>{row.email}</td>
-          <td><Link to={`/staff/group/${row.batch}/${row.domain}/${row._id}`}>
+          <td><Link to={`/staff/task/view/${row._id}`}>
             <button className='viewmygrpbutton'>View</button>
           </Link></td>
         </tr>
@@ -78,4 +76,4 @@ const Mystudents = () => {
   )
 }
 
-export default Mystudents
+export default Viewtasks
