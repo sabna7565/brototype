@@ -122,22 +122,7 @@ const Addsyllabus = () => {
               
               </>
              )) }
-      
-
-
-      {/* <div className="form-field col x-100">
-          <div className="viewsimg">
-             {branch_image ? (
-               <img src = {URL.createObjectURL(branch_image)} className="viewbranchimg" />
-               ) : (
-                  <img src={def} className="viewbranchimg" />
-               )} 
-          </div>
-          <input id="image" className="input-file js-input" type="file" enctype="multipart/form-data" name='attachment' required />
-           
-       </div>*/}
-
-
+     
        <div className="form-field col x-100 align-center">
           <input className="submit-btn" onClick={handleSubmit} type="submit" value="Submit" />
        </div>

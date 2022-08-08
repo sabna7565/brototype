@@ -5,6 +5,7 @@ const User = require('../models/userModel')
 // const { findByIdAndUpdate } = require('../models/userModel')
 const Task = require('../models/taskModel')
 const Syllabus = require('../models/syllabusModel')
+const Review = require('../models/reviewModel')
 
 // @desc  Register new user
 // @route  POST /api/users
@@ -266,6 +267,23 @@ const fetchModalTask = asyncHandler(async (req,res) =>{
         throw new Error('Cannot fetch tasks due some errors');
     }
 })
+
+// @desc  Get review list
+// @route  Get /api/user/review
+const fetchReview = asyncHandler(async (req,res) =>{
+    const studentId = req.params.id;
+    const review = await Review.find({name: studentId});
+
+    if(review) {
+        res.status(200).json({
+            review,
+        });
+
+    } else {
+        res.status(400);
+        throw new Error('Cannot fetch branchs due some errors');
+    }
+})
 module.exports = {
-    registerUser, loginUser, getMe, editUser, fetchSyllabus, addTask, fetchTask, fetchModalTask,
+    registerUser, loginUser, getMe, editUser, fetchSyllabus, addTask, fetchTask, fetchModalTask, fetchReview,
 }

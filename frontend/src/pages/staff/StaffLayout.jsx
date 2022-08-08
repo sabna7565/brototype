@@ -4,10 +4,12 @@ import Header from '../../components/home/header/Header'
 
 const StaffLayout = ({children}) => {
   return (
+    
     <div className='grid'>
-     <div className='header'>
-        <Header />
-         </div>
+      <Header />
+     {/* <div className='header'>
+        
+         </div> */}
         <div className="ubody">
         <div className="uhomeSidebar">
          <Sidebar />

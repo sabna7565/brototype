@@ -98,7 +98,7 @@ console.log("branch second effect", branch)
   return (
     <div>
     <Header />
-    <div className='singlebranchs'>
+    <div className='wsinglebranchs'>
       <div className= {classes.root}>
     <Grid container spacing={1}>
         <Grid container item xs={12} spacing={1}>

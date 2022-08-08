@@ -1,0 +1,76 @@
+.staffsinglereview{
+    margin-top: 25px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    .title{
+        font-size: 25px;
+        font-weight: bold;
+        text-decoration: underline;
+        justify-content: center;
+        align-items: center;
+        margin-left: 15em;
+        height: 80px;
+        padding-top: 20px;
+        text-transform: uppercase;
+    
+        .addgrp{
+          margin-left: 137px;
+          margin-top: 18px;
+          height: 36px;
+          width: 126px;
+          color: white;
+          text-decoration: none;
+          font-size: 15px;
+          background-color: rgb(25, 65, 48);
+        }
+      }
+
+      .studentreviewtable{
+        margin-top: 20px;
+    -webkit-box-shadow: 2px 4px 10px 1px rgba(4, 4, 4, 4.47);
+    box-shadow: 2px 4px 10px 1px rgb(7, 7, 7);
+    width: 1000px;
+    margin-left: 30px;
+
+    .firstrow{
+        background-color: rgb(25, 65, 48);
+        color: white;
+        font-weight: bold;
+        height: 40px;
+        padding: 30px;
+        justify-content: center;
+        align-items: center;
+
+        >th{
+            justify-content: center;
+            align-items: center;
+            padding-top: 1px;
+            height: 30px;
+            padding-left: 20px;
+        }        
+    }
+    tr{
+        justify-content: center;
+        align-items: center;
+        line-height: 35px;
+        height: 40px;
+    >td{
+        padding-left: 20px;
+        padding-right: auto;
+        justify-content: center;
+        align-items: center;
+    }   
+  }
+  .viewmygrpbutton{
+    border-radius: 5px;
+    color: darkblue;
+    cursor: pointer;
+    border: 1px solid rgba(15, 15, 77, 0.295);
+    width: 100px;
+    margin-left: -25px;
+    padding-left: 0px;
+  }
+}
+}

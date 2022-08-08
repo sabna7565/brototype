@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const { loginAdmin, getMe, fetchUsers, fetchUser, deleteUser, addStaff, fetchStaffs, deleteStaff, addDesignation, 
     fetchdesignation, addBranch, fetchBranchs, fetchBranch, addBatch, fetchBatchs, addSyllabus, fetchSyllabus,
-    fetchModalSyllabus, } = require('../controllers/adminController')
+    fetchModalSyllabus, addPlacement, fetchPlacement,} = require('../controllers/adminController')
 
 const { isAdmin}  = require('../middleware/authMiddleware')
 
@@ -25,5 +25,7 @@ router.get('/fetch-batchs', fetchBatchs)
 router.post('/add-syllabus', addSyllabus)
 router.get('/fetch-syllabus', fetchSyllabus)
 router.get('/fetch-syllabusmodal/:id', fetchModalSyllabus)
+router.post('/add-placement', addPlacement)
+router.get('/fetch-placement', fetchPlacement)
 
 module.exports = router

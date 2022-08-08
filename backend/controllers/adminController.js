@@ -8,6 +8,7 @@ const Designation = require('../models/designationModel')
 const Branch = require('../models/branchModel')
 const Batch = require('../models/batchModel')
 const Syllabus = require('../models/syllabusModel')
+const Placement = require('../models/placementModel')
 const moment = require('moment');
 
 
@@ -439,8 +440,58 @@ const fetchModalSyllabus = asyncHandler(async (req,res) =>{
         throw new Error('Cannot fetch branchs due some errors');
     }
 })
+
+// @desc  branch insertion
+// @route  GET /api/admin/Placement/new
+const addPlacement = asyncHandler(async (req, res) => {
+    const { name, batch, domain, company, designation,  lpa, photo } = req.body
+    
+
+    if(!name || !batch || !domain || !company || !designation || !lpa || !photo ) {
+        res.status(400)
+        throw new Error('Please add all fields')
+    }
+
+       //Create branch
+    const placement = await Placement.create({
+        name, batch, domain, company, designation,  lpa, photo
+    })
+    console.log("problem", )
+
+    if(placement) {
+        res.status(201).json({
+           _id: placement.id,
+           name: placement.name,
+           batch: placement.batch, 
+           domain: placement.domain,
+           company: placement.company,
+           designation: placement.designation, 
+           lpa: placement.lpa,
+           photo: placement.photo,
+        })
+    } else {
+        res.status(400)
+        throw new Error('Invalid placement details')
+    }
+})
+
+// @desc  Get placement list
+// @route  GET /api/admin/placement
+const fetchPlacement = asyncHandler(async (req,res) =>{
+    const placement = await Placement.find({});
+
+    if(placement) {
+        res.status(200).json({
+            placement,
+        });
+    } else {
+        res.status(400);
+        throw new Error('Cannot fetch placement due some errors');
+    }
+})
 module.exports = {
     loginAdmin, getMe, fetchUsers, fetchUser, deleteUser, addStaff, fetchStaffs, 
     deleteStaff, addDesignation, fetchdesignation,  addBranch, fetchBranch,
     fetchBranchs, addBatch, fetchBatchs, addSyllabus, fetchSyllabus, fetchModalSyllabus,
+    addPlacement, fetchPlacement,
 }

@@ -42,21 +42,21 @@ const fetchReviewGroup= async()=>{
 console.log("reviewgroup", Fulldata.group)
 let reviewgroup = Fulldata.group ? Fulldata.group : [];
   return (
-    <div className='review'>
+    <div className='rteview'>
       <div className="reviewtitle">
         <span>Review</span>
         {/* <Link to="/staff/group/new">
           <button className='reviewaddgrp'>Create Group</button>
         </Link> */}
       </div>
-
+        <div className="outerreview">
         <div className='reviewmygrp'>
       <Table striped bordered hover size="sm">
       <thead>
         <tr className='firstrow'>
           <th style={{width: '180px'}}>Batch Name</th>
-          <th>Group</th>
-          <th>Advisor Name</th>
+          <th style={{width: '180px'}}>Group</th>
+          <th style={{width: '180px'}}>Advisor Name</th>
           <th style={{width: '150px'}}>Action</th>
         </tr>
       </thead>
@@ -73,6 +73,7 @@ let reviewgroup = Fulldata.group ? Fulldata.group : [];
         ))}
       </tbody>
     </Table>
+    </div>
     </div>
   </div> 
   )

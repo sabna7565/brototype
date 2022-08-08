@@ -47,14 +47,14 @@ import Table from 'react-bootstrap/Table';
       <div className="studtitle">
         <span>My Students</span>
      </div>
-
+    <div className="viewtask1">
     <div className="studentstable">
      <Table striped bordered hover size="sm">
       <thead>
-        <tr className='firstrow'>
+        <tr className='swfirstrow'>
           <th style={{width: '180px'}}>Student Name</th>
-          <th>Group</th>
-          <th>Email</th>
+          <th style={{width: '130px'}}>Group</th>
+          <th style={{width: '200px'}}>Email</th>
           <th style={{width: '150px'}}>Action</th>
         </tr>
       </thead>
@@ -71,6 +71,7 @@ import Table from 'react-bootstrap/Table';
         ))}
       </tbody>
     </Table>
+    </div>
     </div>
     </div>
   )

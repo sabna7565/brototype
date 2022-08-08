@@ -44,9 +44,9 @@ let mygroup = Fulldata.group ? Fulldata.group : [];
       <Table striped bordered hover size="sm">
       <thead>
         <tr className='firstrow'>
-          <th style={{width: '180px'}}>Batch Name</th>
-          <th>Group</th>
-          <th>Advisor Name</th>
+          <th style={{width: '150px'}}>Batch Name</th>
+          <th style={{width: '150px'}}>Group</th>
+          <th style={{width: '150px'}}>Advisor Name</th>
           <th style={{width: '150px'}}>Action</th>
         </tr>
       </thead>

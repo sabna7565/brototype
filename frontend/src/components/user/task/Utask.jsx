@@ -48,19 +48,19 @@ const [st, setSt] = React.useState(null);
   return (
     <div className='usertask'>
     <div className="reviewtitle">
-      <span>Task</span>
+      <span>View Tasks</span>
       <Link to={`/user/task/${user._id}/${user.domain}/${user.week}`}>
         <button className='utaskaddgrp'>Upload task</button>
       </Link>
     </div>
-
+      <div className="taskouter">
       <div className='tasktable'>
     <Table striped bordered hover size="sm">
     <thead>
       <tr className='firstrow'>
-        <th style={{width: '180px'}}>Week</th>
+        <th style={{width: '200px'}}>Week</th>
         
-        <th style={{width: '150px'}}>Action</th>
+        <th style={{width: '250px'}}>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -68,12 +68,13 @@ const [st, setSt] = React.useState(null);
       <tr>
         <td>{row.week}</td>
         
-        <td><button className='uttaskaddgrp' onClick={()=>setSt(row._id)}><Utaskmodal id = {st} /> </button></td>
+        <td><button className='usttaskaddgrp' onClick={()=>setSt(row._id)}><Utaskmodal id = {st} /> </button></td>
      
       </tr>
       ))}
     </tbody>
   </Table>
+  </div>
   </div>
 </div> 
   )

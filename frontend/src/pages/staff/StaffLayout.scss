@@ -1,6 +1,6 @@
 .grid{
     display: grid;
-
+    
 .header{
     height:120px;
     width: 100%;
@@ -9,7 +9,7 @@
 }
 .ubody{
     display: flex;
-    margin-top: 115px;
+    // margin-top: 115px;
     overflow: hidden;
     height: 100%;
     width: 100%;
@@ -18,8 +18,10 @@
 .uhomeSidebar{
     margin-top: 3px;
     height: 100%;
-    flex: 2;
-    width: 15em;
+    flex: 1.6;
+    // width: 15em;
+    margin-left: 10px;
+    
 }
 .ucontents{
     margin-left: 20px;

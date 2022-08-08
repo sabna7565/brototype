@@ -1,9 +1,9 @@
 import './Viewreview.scss'
-import {Link, useNavigate, useParams} from "react-router-dom"
+import {Link, useParams} from "react-router-dom"
 import Table from 'react-bootstrap/Table';
 import { useEffect, useState } from 'react'
 import * as api from '../../../../../api/staff'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 
 const Viewreview = () => {
@@ -53,15 +53,15 @@ const Viewreview = () => {
      <Table striped bordered hover size="sm">
       <thead>
         <tr className='firstrow'>
-          <th>Date</th>
-          <th>Week</th>
-          <th>Status</th>
-          <th>Pendings</th>
-          <th>Updations</th>
-          <th>Reviewer</th>
-          <th>Score</th>
-          <th>Seminar </th>
-          <th>Score</th>
+          <th style={{width: '150px'}}>Date</th>
+          <th style={{width: '100px'}}>Week</th>
+          <th style={{width: '100px'}}>Status</th>
+          <th style={{width: '100px'}}>Pendings</th>
+          <th style={{width: '100px'}}>Updations</th>
+          <th style={{width: '100px'}}>Reviewer</th>
+          <th style={{width: '100px'}}>Score</th>
+          <th style={{width: '100px'}}>Seminar </th>
+          <th style={{width: '100px'}}>Score</th>
           <th style={{width: '100px'}}>Total</th>
         </tr>
       </thead>

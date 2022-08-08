@@ -45,18 +45,18 @@ const Mystudents = () => {
   
   return (
    
-    <div className='group'>
+    <div className='mystudent1s'>
       <div className="studtitle">
         <span>My Students</span>
      </div>
-
+    <div className="outer">
     <div className="studentstable">
      <Table striped bordered hover size="sm">
       <thead>
         <tr className='firstrow'>
-          <th style={{width: '180px'}}>Batch Name</th>
-          <th>Group</th>
-          <th>Advisor Name</th>
+          <th style={{width: '150px'}}>Batch Name</th>
+          <th style={{width: '150px'}}>Group</th>
+          <th style={{width: '180px'}}>Advisor Name</th>
           <th style={{width: '150px'}}>Action</th>
         </tr>
       </thead>
@@ -73,6 +73,7 @@ const Mystudents = () => {
         ))}
       </tbody>
     </Table>
+    </div>
     </div>
     </div>
   )

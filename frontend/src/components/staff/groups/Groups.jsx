@@ -8,7 +8,7 @@ const Groups = () => {
   return (
     <div className='group'>
       <div className="title">
-        <span>Groups</span>
+        <span>My Groups</span>
         <Link to="/staff/group/new">
           <button className='addgrp'>Create Group</button>
         </Link>
@@ -16,7 +16,8 @@ const Groups = () => {
       <div className="body">
       <div className="review">
         <div className="mygrpss">
-          <span className='text'>My Groups</span></div>
+          {/* <span className='text'>My Groups</span> */}
+          </div>
           <Mygroup />
       </div>
       {/* <div className="casual">

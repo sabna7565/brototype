@@ -38,7 +38,7 @@ const Addbranch = () => {
       }
    }
 
-   const [formData, setFormData] = useState({
+   const [formData, setFormData] = useState({   
       branch_name: '', location:'', address:'', branch_image:'',
    })
    const [Loading, setIsLoading] = useState(false);
@@ -60,7 +60,7 @@ const Addbranch = () => {
 
       } else {
          setIsLoading(true)
-         const data = await UploadFile(branch_image)
+         const data = await UploadImage(branch_image)
          console.log("data",data)
          formData.branch_image = data.secure_url.toString()
          dispatch(addBranch(formData))

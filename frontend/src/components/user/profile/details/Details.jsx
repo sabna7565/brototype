@@ -150,7 +150,7 @@ const Details = () => {
           <div className="input_field"> 
           <img className='adidpic' src={Pproof_image || user.proof_image} />
           <span><p>Upload Proof</p></span></div>
-            <input type="file" className='uploadid' name="proof_image"  onChange={(e) => proofUpdation(e.target.files[0])} required  />
+            <input type="file" className='uploadid' name="proof_image"  onChange={(e) => proofUpdation(e.target.files[0])}  />
            
           </div>
           <input className="button" type="submit" value="Submit" />

@@ -1,36 +1,48 @@
-.group{
+.mystudent1s{
         margin-top: 25px;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
         .studtitle{
             font-size: 25px;
             font-weight: bold;
             text-decoration: underline;
             justify-content: center;
             align-items: center;
-            margin-left: 12em;
+            // margin-left: 12em;
             height: 80px;
             padding-top: 20px;
+            width: 100%;
             text-transform: uppercase;
+            display: flex;
         }
+        .outer{
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            display: flex;
         .studentstable{
+
             margin-top: 20px;
         -webkit-box-shadow: 2px 4px 10px 1px rgba(4, 4, 4, 4.47);
         box-shadow: 2px 4px 10px 1px rgb(7, 7, 7);
-        width: 700px;
-        margin-left: 30px;
-    
+        width: 630px;
+        // margin-left: 30px;
+        justify-content: center;
+        align-items: center;
         .firstrow{
             background-color: rgb(25, 65, 48);
             color: white;
             font-weight: bold;
             height: 40px;
-            padding: 30px;
             justify-content: center;
             align-items: center;
     
             >th{
-                padding-left: 40px;
                 padding-top: 1px;
                 height: 30px;
+                justify-content: center;
+                align-items: center;
             }        
         }
         tr{
@@ -51,5 +63,5 @@
         padding-left: 0px;
       }
     }
-    
+    }
     }

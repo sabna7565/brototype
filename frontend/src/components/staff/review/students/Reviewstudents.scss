@@ -1,16 +1,25 @@
-.reviewstudent{
+.reeviewstudent{
     margin-top: 25px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     .studtitle{
         font-size: 25px;
         font-weight: bold;
         text-decoration: underline;
         justify-content: center;
         align-items: center;
-        margin-left: 12em;
         height: 80px;
         padding-top: 20px;
         text-transform: uppercase;
+        width: 100%;
+        display: flex;
     }
+    .revsecond{
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      display: flex;
     .studentstable{
         margin-top: 20px;
     -webkit-box-shadow: 2px 4px 10px 1px rgba(4, 4, 4, 4.47);
@@ -28,7 +37,8 @@
         align-items: center;
 
         >th{
-            padding-left: 40px;
+          justify-content: center;
+           align-items: center;
             padding-top: 1px;
             height: 30px;
         }        
@@ -37,7 +47,7 @@
         line-height: 35px;
         height: 40px;
     >td{
-        padding-left: 40px;
+        padding-left: 50px;
 
     }   
   }
@@ -82,5 +92,5 @@
     justify-content: center;
 }
 }
-
+}
 }

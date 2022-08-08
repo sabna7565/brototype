@@ -2,6 +2,7 @@
      width: 100%;
     color: white;
     z-index: 20;
+    margin: 0px;
     
     .firstdiv{
         height: 40px;
@@ -27,10 +28,10 @@
         color: white;
         margin-left: 0px;
         display: flex;
-
+        
         .logo{
             margin-left: 30px;
-            margin-top: 5px;
+            margin-top: 15px;
             line-height: 18px;
             width: auto;
 
@@ -61,16 +62,21 @@
                 font-size: 14px;
                 color: white;
                 font-weight: bold;
-
+                width: 194px;
+                margin-top: -8px;
             }
         }
         .ulli{
             display: flex;
-            gap: 75px;
+            gap: 45px;
             margin-left: 15px;
             padding: 25px;
             padding-left: 55px;
             list-style: none;
+
+            .hbtn{
+                width: 100px;
+            }
         }
     }
 }

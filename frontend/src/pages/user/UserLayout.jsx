@@ -4,10 +4,12 @@ import Header from '../../components/home/header/Header'
 
 const UserLayout = ({children}) => {
   return (
+    
     <div className='ugrid'>
-     <div className='header'>
-        <Header />
-         </div>
+      <Header />
+     {/* <div className='header'>
+        {/* <Header /> 
+         </div> */}
         <div className="ubody">
         <div className="uhomeSidebar">
          <Sidebar />

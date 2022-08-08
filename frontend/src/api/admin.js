@@ -29,5 +29,8 @@ export const addSyllabus=(syllabusData)=>API.post('/add-syllabus', syllabusData)
 export const viewSyllabus=()=>API.get('/fetch-syllabus')
 export const ViewSyllabusModal=(syllabusId)=>API.get(`/fetch-syllabusmodal/${syllabusId}`)
 
+export const addPlacement=(placementData)=>API.post('/add-placement', placementData)
+export const viewPlacement=()=>API.get('/fetch-placement')
+
 
 

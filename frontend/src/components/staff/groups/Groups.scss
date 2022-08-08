@@ -1,9 +1,14 @@
 .group{
     margin-top: 25px;
-
+   justify-content: center;
+   align-items: center;
+   width: 100%;
     .body{
         display: grid;
-        margin-top: 6px;
+        margin-top: 16px;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
     .review{
         flex: 6;
         .mygrpss{
@@ -48,7 +53,7 @@
     text-transform: uppercase;
 
     .addgrp{
-      margin-left: 137px;
+      margin-left: 277px;
       margin-top: 18px;
       height: 36px;
       width: 126px;

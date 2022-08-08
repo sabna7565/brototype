@@ -86,12 +86,12 @@ const onLogout = () => {
         </li>
         </Link>
 
-        <Link to="/admin/payments">
+        {/* <Link to="/admin/payments">
         <li>
           <PaymentIcon className='icon'/>
           <span>Payments</span>
         </li>
-        </Link>
+        </Link> */}
 
         <Link to="/admin/placements">
         <li>
@@ -100,12 +100,12 @@ const onLogout = () => {
         </li>
         </Link>
 
-        <Link to="/admin/posts">
+        {/* <Link to="/admin/posts">
         <li>
           <PostAddIcon className='icon'/>
           <span>Posts</span>
         </li>
-        </Link>
+        </Link> */}
 
         <li>
           <ExitToAppIcon className='icon'/>

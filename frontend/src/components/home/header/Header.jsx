@@ -3,6 +3,8 @@ import {Link, useNavigate} from 'react-router-dom'
 import {useSelector, useDispatch} from 'react-redux'
 import {logout, reset} from '../../../features/auth/authSlice'
 import {stafflogout, sreset} from '../../../features/sauth/sauthSlice'
+import { HashLink } from 'react-router-hash-link';
+
 
 import './Header.scss'
 
@@ -43,14 +45,34 @@ const onsLogout = () => {
             </Link>  
         </div>
         <ul className='ulli'>
-          <li>about</li>
-          <li>branch</li>
-          <li>contact</li>
+        <HashLink to='/#about'>
+          <li><button type='button' className='hbtn'>
+                 About
+                </button>  </li></HashLink>
+                <HashLink to='/#placement'>
+                <li><button type='button' className='hbtn'>
+                 Placements
+                </button>  </li></HashLink>
+                <HashLink to='/#branch'>
+                <li><button type='button' className='hbtn'>
+                 Branch
+                </button>  </li></HashLink>
+                <HashLink to='/#courses'>
+                <li><button type='button' className='hbtn'>
+                 Courses
+                </button>  </li></HashLink>
+                <HashLink to='/#contact'>
+                <li><button type='button' className='hbtn'>
+                 Contact
+                </button>  </li></HashLink>
+          
 
           {user ? ( 
              <Link to='/user'>
              <li style={{color:'white'}}>
-                 Profile
+             <button type='button' className='hbtn'>
+                Profile
+                </button>       
               
               </li>
              </Link>  
@@ -62,7 +84,9 @@ const onsLogout = () => {
          {staff ? ( 
              <Link to='/staff'>
              <li style={{color:'white'}}>
-                 Profiles
+             <button type='button' className='hbtn'>
+                Profile
+                </button>
               
               </li>
              </Link>  
@@ -74,7 +98,7 @@ const onsLogout = () => {
 
           {user  ? ( 
             <li>
-              <button type='button' className='btn' onClick={onLogout}>
+              <button type='button' className='hbtn' onClick={onLogout}>
                  Logout
                 </button>  
             </li> 
@@ -83,13 +107,21 @@ const onsLogout = () => {
           ) : (
           <>
           { !staff ? (
+            <>
           <Link to='/login'>
             <li style={{color:'white'}}>
-                Login
+                <button className='hbtn'>Login</button>
              
              </li>
             </Link>  
 
+            <Link to='/register'>
+            <li style={{color:'white'}}>
+                <button className='hbtn'>Register</button>
+            
+            </li>
+            </Link>  
+            </>
             ) : (
               <>
               </>
@@ -104,7 +136,7 @@ const onsLogout = () => {
 
           {staff ? ( 
             <li>
-              <button type='button' className='btn' onClick={onsLogout}>
+              <button type='button' className='hbtn' onClick={onsLogout}>
                  Logout
                 </button>  
             </li>

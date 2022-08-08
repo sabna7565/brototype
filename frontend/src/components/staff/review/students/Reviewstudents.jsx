@@ -72,19 +72,19 @@ const Reviewstudents = () => {
     {week: 'week23',},{ week: 'week24',},
   ];
   return (
-    <div className='reviewstudent'>
+    <div className='reeviewstudent'>
       <div className="studtitle">
         <span>Review Students</span>
      </div>
-
+    <div className="revsecond">
     <div className="studentstable">
      <Table striped bordered hover size="sm">
       <thead>
         <tr className='firstrow'>
           <th style={{width: '150px'}}>Name</th>
-          <th>Group</th>
-          <th>Email Id</th>
-          <th style={{width: '250px'}}>Action</th>
+          <th style={{width: '150px'}}>Group</th>
+          <th style={{width: '220px'}}>Email Id</th>
+          <th style={{width: '280px'}}>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -116,6 +116,7 @@ const Reviewstudents = () => {
         ))}
       </tbody>
     </Table>
+    </div>
     </div>
     </div>
   )

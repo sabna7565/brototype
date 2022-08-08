@@ -49,13 +49,13 @@ const [st, setSt] = React.useState(null);
       <div className="studtitle">
         <span>My Students</span>
      </div>
-
+    <div className="outer2">
     <div className="studentstable">
      <Table striped bordered hover size="sm">
       <thead>
-        <tr className='firstrow'>
+        <tr className='safirstrow'>
           <th style={{width: '180px'}}>Week</th>
-          <th style={{width: '150px'}}>Action</th>
+          <th style={{width: '220px'}}>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -64,12 +64,13 @@ const [st, setSt] = React.useState(null);
           <td>{row.week}</td>
           
           <td>
-            <button className='viewmygrpbutton' onClick={()=>setSt(row._id)}><Usertaskmodal id = {st} /> </button>
+            <button className='viewmysgrpbutton' onClick={()=>setSt(row._id)}><Usertaskmodal id = {st} /> </button>
           </td>
         </tr>
         ))}
       </tbody>
     </Table>
+    </div>
     </div>
     </div>
   )

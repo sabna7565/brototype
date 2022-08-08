@@ -85,9 +85,9 @@ const Uaddtask = () => {
          <div className='usertask'>
     <div className="reviewtitle">
       <span>Task</span>
-      <Link to={`/user/task/${user._id}/${user.domain}/${user.week}`}>
+      {/* <Link to={`/user/task/${user._id}/${user.domain}/${user.week}`}>
         <button className='utaskaddgrp'>Upload task</button>
-      </Link>
+      </Link> */}
     </div>
 
       <div className='tasktable'>

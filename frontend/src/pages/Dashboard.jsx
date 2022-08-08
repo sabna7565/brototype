@@ -24,21 +24,24 @@ function Dashboard() {
     <div className="carousal">
     <Carous />
     </div>
-    <div className="videos">
+    <div className="videos" id='about'>
       <div className="youtube"><Youtube /></div>
       <div className="description"><p>No Tution Fee <br /> Upfront, <br /> Pay only When <br /> You Earn.</p>
       <p className='from'>From Zero to a high paid Software Engineer in 180 <br /> days.</p>
       <Link to="/about"><Button className='more'>More About</Button></Link>
       </div>
     </div>
-    <div className="placement">
+    <div className="placement" id='placement'>
       <Placement />
     </div>
-    <div className="branch">
+    <div className="branch" id='branch'>
+      <div className="branchhead">
+    <h1 className='brheading'>BRANCHES</h1></div>
      <Allbranch />
     </div>
-    <div className="domain">
-      <h1 className='heading'>Domains</h1>
+    <div className="domain" id='courses'>
+    <div className="domainhead">
+      <h1 className='heading'>Courses</h1></div>
       <div className="firstrow">
         <div className="first">
         <img src={Web} className="imag" />
@@ -70,7 +73,7 @@ function Dashboard() {
     </div>
     
     
-    Dashboard</div>  
+    </div>  
 }
 
 export default Dashboard

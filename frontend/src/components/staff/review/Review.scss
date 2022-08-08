@@ -1,17 +1,19 @@
-.review{
+.rteview{
     margin-top: 25px;
-
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     .reviewtitle{
         font-size: 25px;
         font-weight: bold;
         text-decoration: underline;
         justify-content: center;
         align-items: center;
-        margin-left: 15em;
         height: 80px;
         padding-top: 20px;
         text-transform: uppercase;
-    
+        width: 100%;
+        display: flex;
         .reviewaddgrp{
           margin-left: 225px;
           margin-top: 18px;
@@ -23,12 +25,17 @@
           background-color: rgb(25, 65, 48);
         }
       }
+ .outerreview{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    display: flex;
 .reviewmygrp{
     margin-top: 30px;
     margin-top: 10px;
     -webkit-box-shadow: 2px 4px 10px 1px rgba(4, 4, 4, 4.47);
     box-shadow: 2px 4px 10px 1px rgb(7, 7, 7);
-    width: 700px;
+    width: 600px;
     margin-left: 30px;
 
     .firstrow{
@@ -36,14 +43,14 @@
         color: white;
         font-weight: bold;
         height: 40px;
-        padding: 30px;
         justify-content: center;
         align-items: center;
 
         >th{
-            padding-left: 40px;
             padding-top: 1px;
             height: 30px;
+            justify-content: center;
+            align-items: center;
         }        
     }
     tr{
@@ -63,5 +70,6 @@
     margin-left: -25px;
     padding-left: 0px;
   }
+}
 }
 }

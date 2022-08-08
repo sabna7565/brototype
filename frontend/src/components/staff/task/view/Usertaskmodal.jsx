@@ -101,7 +101,7 @@ const Usertaskmodal = ({id}) => {
 
   return (
     <div>
-        <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+        <Button style={{width: '150px'}} variant="outlined" color="primary" onClick={handleClickOpen}>
         View Question
       </Button>
 

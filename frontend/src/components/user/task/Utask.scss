@@ -26,8 +26,13 @@
           background-color: rgb(25, 65, 48);
         }
       }
-.tasktable{
+  .taskouter{
     width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+.tasktable{
+    width: 450px;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -40,27 +45,28 @@
         color: white;
         font-weight: bold;
         height: 40px;
-        padding-left: 30px;
         justify-content: center;
         align-items: center;
 
         >th{
-            padding-left: 40px;
+            // padding-left: 40px;
             padding-top: 1px;
             height: 30px;
+            justify-content: center;
+            align-items: center;
         }        
     }
     tr{
         line-height: 35px;
         height: 40px;
     >td{
-        padding-left: 40px;
+        padding-left: 50px;
     }
-    .uttaskaddgrp{
-      margin-left: 225px;
+    .usttaskaddgrp{
+      // margin-left: 225px;
       margin-top: 1px;
       height: 36px;
-      width: 126px;
+      width: 180px;
       color: white;
       text-decoration: none;
       font-size: 15px;
@@ -73,9 +79,9 @@
     color: darkblue;
     cursor: pointer;
     border: 1px solid rgba(15, 15, 77, 0.295);
-    width: 100px;
-    margin-left: -25px;
+    width: 150px;
     padding-left: 0px;
+  }
   }
 }
 }

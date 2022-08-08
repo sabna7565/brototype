@@ -10,16 +10,8 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { reset }  from '../../../features/admin/batch/getBatchsSlice'
 import { useEffect,useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { toast } from 'react-toastify'
-import Spinner from '../../Spinner';
 import {Link, useNavigate} from "react-router-dom"
 import * as api from '../../../api/admin'
-import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import MuiDialogTitle from '@material-ui/core/DialogTitle';
-import MuiDialogContent from '@material-ui/core/DialogContent';
-import MuiDialogActions from '@material-ui/core/DialogActions';
 import Syllabusmodal from './Syllabusmodal'
 
 

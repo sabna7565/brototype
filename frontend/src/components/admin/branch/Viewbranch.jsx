@@ -93,7 +93,7 @@ console.log("branch second effect", branch)
         </React.Fragment>
       );
     }
-
+    
   return (
     <div className='singlebranchs'>
       <div className= {classes.root}>

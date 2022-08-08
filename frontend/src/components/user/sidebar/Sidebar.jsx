@@ -16,7 +16,7 @@ const Sidebar = () => {
             <input type="file" className='inputimg'/>
           </form>
           </div>
-           
+
           <div className="useritems"><ul>
         <Link to="/user">
         <li>
@@ -34,11 +34,11 @@ const Sidebar = () => {
           <span>Review</span>
         </li>
         </Link>
-        <Link to="/user/payments">
+        {/* <Link to="/user/payments">
         <li>
           <span>Payments</span>
         </li>
-        </Link>
+        </Link> */}
         <Link to="/user/group">
         <li>
           <span>Group</span>
