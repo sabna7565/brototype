@@ -14,6 +14,7 @@ import Machine from '../images/home/machine.jpeg'
 import Test from '../images/home/testing.webp'
 import Data from '../images/home/datascience.jpg'
 import Devops from '../images/home/devops.png'
+//import Profile from '../components/home/profile/Profile'
 
 
 function Dashboard() {
@@ -33,6 +34,7 @@ function Dashboard() {
     </div>
     <div className="placement" id='placement'>
       <Placement />
+      {/* <Profile /> */}
     </div>
     <div className="branch" id='branch'>
       <div className="branchhead">

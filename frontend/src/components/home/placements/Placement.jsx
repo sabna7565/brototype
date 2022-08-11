@@ -5,13 +5,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Container from '@material-ui/core/Container';
 import * as api from '../../../api/home'
 import { useEffect,useState } from 'react';
-
-import car1 from '../../../images/home/calicut2.jpeg'
-import car2 from '../../../images/home/calicut5.jpeg'
-import car3 from '../../../images/home/calicut4.jpeg'
-import car4 from '../../../images/home/calicut3.jpeg'
 import './Placement.scss'
-import data from './data'
+
 
 
  const Placement = () => {
@@ -83,19 +78,25 @@ return (
 <h1 style={{marginTop: "2rem",marginBottom:"1rem"}} className="placeheading">Placements</h1>
 <Slider {...settings} style={{paddingLeft: '30px'}}>
   {placements?.map(item => (
-    <div style={{ marginTop: "3rem" }} className="card">
-      <div className="card-top">
-        <img style={{width: '200px', height: '200px', marginTop: '70px'}} src={item.photo} alt="sadfas" />
-      </div>
-      <div className="card-bottom">
-      <h4 className="heading3">{item.name}</h4>
-      <span className="heading2">{item.company}</span>
-      <h4 className="heading1">{item.designation}</h4>
-      <span className="heading1">{item.lpa}</span>
 
-      </div>
-      
-    </div> 
+    <div style={{ marginTop: "3rem" }} className="card">
+        <div className="card-top">
+         {/* <img style={{width: '200px', height: '200px', marginTop: '70px'}} src={item.photo} alt="sadfas" /> */}
+         <figure class="snip1344">
+         <img src={item.photo} alt="profile-sample1" class="profile"/>
+         <figcaption>
+            <h3 className="snipname">{item.name}</h3>
+            <h3 className="spancompany"><span>{item.company}</span></h3>
+            <h4>{item.designation}</h4>
+       <span >{item.lpa}</span>
+            {/* <div class="icons"><a href="#"><i class="ion-social-reddit-outline"></i></a><a href="#"> <i class="ion-social-twitter-outline"></i></a><a href="#"> <i class="ion-social-vimeo-outline"></i></a></div> */}
+          </figcaption>
+         </figure>
+       </div>
+       
+     </div> 
+
+
   ))}
 </Slider>
 </Container>

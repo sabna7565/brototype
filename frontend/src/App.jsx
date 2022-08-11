@@ -50,6 +50,7 @@ import Viewtask from './components/staff/task/view/Viewtask';
 import Ureview from './components/user/review/Ureview';
 import Placement from './components/admin/placement/Placement';
 import Addplacement from './components/admin/placement/add/Addplacement';
+//import Procard from './components/home/profile/Profile'
 
 function App() {
 const admin = useSelector((state) => state.adminauth.admin)
@@ -68,6 +69,7 @@ const staff = useSelector((state) => state.staffauth.staff)
         <Route path='/register' element={<Register />} />
         <Route path='/about' element={<About />} />
         <Route path='/:location' element={<UViewbranch />} />
+        {/* <Route path='/procard' element={<Procard />} /> */}
 
         {/* ====================User======================= */}
 
