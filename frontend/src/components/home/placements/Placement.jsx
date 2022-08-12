@@ -6,6 +6,7 @@ import Container from '@material-ui/core/Container';
 import * as api from '../../../api/home'
 import { useEffect,useState } from 'react';
 import './Placement.scss'
+import { Link } from 'react-router-dom'
 
 
 
@@ -68,7 +69,6 @@ import './Placement.scss'
           console.log(error)
         }
       }
-       console.log("important....", Fulldata.placement)
        let placements = Fulldata.placement ? Fulldata.placement : [];
 
 return (
@@ -78,25 +78,22 @@ return (
 <h1 style={{marginTop: "2rem",marginBottom:"1rem"}} className="placeheading">Placements</h1>
 <Slider {...settings} style={{paddingLeft: '30px'}}>
   {placements?.map(item => (
-
+    <Link to='/placements'>
     <div style={{ marginTop: "3rem" }} className="card">
         <div className="card-top">
-         {/* <img style={{width: '200px', height: '200px', marginTop: '70px'}} src={item.photo} alt="sadfas" /> */}
          <figure class="snip1344">
+         <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/profile-sample1.jpg" alt="profile-sample1" class="background"/>
          <img src={item.photo} alt="profile-sample1" class="profile"/>
          <figcaption>
             <h3 className="snipname">{item.name}</h3>
             <h3 className="spancompany"><span>{item.company}</span></h3>
             <h4>{item.designation}</h4>
-       <span >{item.lpa}</span>
-            {/* <div class="icons"><a href="#"><i class="ion-social-reddit-outline"></i></a><a href="#"> <i class="ion-social-twitter-outline"></i></a><a href="#"> <i class="ion-social-vimeo-outline"></i></a></div> */}
+            <span >{item.lpa}</span>
           </figcaption>
          </figure>
        </div>
-       
-     </div> 
-
-
+     </div>
+    </Link>
   ))}
 </Slider>
 </Container>

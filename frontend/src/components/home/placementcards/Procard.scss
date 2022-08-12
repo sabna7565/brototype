@@ -1,0 +1,37 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600);
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+
+.wsingleplacement{
+width: 90%;
+padding: 20px;
+margin-top: 1%;
+margin-left: 5%;
+margin-bottom: 150px;
+height: auto;
+background-color: rgb(255, 255, 255);
+overflow: hidden;
+
+.placehead{
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.ssnip1344 a {
+  text-decoration: none;
+}
+.ssnip1344 i:hover {
+  opacity: 1;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.ssnip1344:hover .background,
+.ssnip1344.hover .background {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+}
+}
+

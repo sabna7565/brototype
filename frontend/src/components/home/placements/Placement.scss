@@ -67,12 +67,14 @@
         top: 50%;
       }
       .snip1344 .profile {
-        border-radius: 22;
+        border-radius: 50%;
         position: absolute;
-        bottom: 33%;
+        bottom: 47%;
         left: 50%;
-        width: 150px;
-        height: 150px;
+        min-width: 150px;
+        max-width: 150px;
+        min-height: 150px;
+        max-height: 150px;
         opacity: 1;
         box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
         //border: 2px solid rgba(255, 255, 255, 0.5);
@@ -86,7 +88,7 @@
       .snipname {
         margin: 0 0 5px;
         font-weight: 400;
-         margin-top: 70px;
+         margin-top: 50px;
         font-size: 1.5em;
         width: 100%;
         font-family: 'Times New Roman, Times, serif';
