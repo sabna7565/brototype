@@ -98,7 +98,7 @@ const onsLogout = () => {
 
           {user  ? ( 
             <li>
-              <button type='button' className='hbtn' onClick={onLogout}>
+              <button type='button' className='ulogouthbtn' onClick={onLogout}>
                  Logout
                 </button>  
             </li> 
@@ -136,7 +136,7 @@ const onsLogout = () => {
 
           {staff ? ( 
             <li>
-              <button type='button' className='hbtn' onClick={onsLogout}>
+              <button type='button' className='logouthbtn' onClick={onsLogout}>
                  Logout
                 </button>  
             </li>

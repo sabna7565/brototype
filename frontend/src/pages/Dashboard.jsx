@@ -14,7 +14,7 @@ import Machine from '../images/home/machine.jpeg'
 import Test from '../images/home/testing.webp'
 import Data from '../images/home/datascience.jpg'
 import Devops from '../images/home/devops.png'
-
+import Footer from '../components/home/footer/Footer'
 
 function Dashboard() {
   return <div className="dashboard">
@@ -72,7 +72,7 @@ function Dashboard() {
         </div>
       </div>
     </div>
-    
+    <Footer />
     
     </div>  
 }

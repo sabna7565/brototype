@@ -6,6 +6,8 @@ import car5 from '../../../images/home/kochi.jpg'
 import car6 from '../../../images/home/public.jpeg'
 import car7 from '../../../images/home/car7.jpeg'
 import car8 from '../../../images/home/graph.jpeg'
+import car9 from '../../../images/home/tvm.jpg'
+import car10 from '../../../images/home/staffs.jpg'
 
 
 const data =[  
