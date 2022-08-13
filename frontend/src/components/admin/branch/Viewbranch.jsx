@@ -36,11 +36,13 @@ const useStyles = makeStyles((theme) => ({
   location: {
     color: 'black',
     fontSize: '20px',
-    lineHeight: '1px'
+    marginTop: "3px",
   },
   second: {
     color: 'black',
-    fontSize: '15px'
+    fontSize: '15px',
+    marginTop: "-13px",
+
   },
 }));
 

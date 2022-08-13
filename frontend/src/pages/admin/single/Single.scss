@@ -9,11 +9,10 @@
             padding: 20px;
             margin: 20px;                    
             gap: 20px;
-            -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-            box-shadow: 2px 4px 10px 1px rgba(122, 117, 117, 0.47);
-        
+            
 
             .title{
+                margin-top: 20px;
                 font-size: 25px;
                 align-items: center;
                 text-decoration: underline;
@@ -26,95 +25,9 @@
                 display: flex;            
                 gap: 20px;
                 flex: 3;            
-                -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-                box-shadow: 2px 4px 10px 1px rgba(122, 117, 117, 0.47);            
             }
         }
-//     }
-// }        
-            
 
-// .left{
-//     flex: 3;
-//     padding: 20px;
-//     background-color: lightblue;
-//     -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-//     box-shadow: 2px 4px 10px 1px rgba(122, 117, 117, 0.47);
-
-
-//     .title{
-//         font-size: 25px;
-//         align-items: center;
-//         text-decoration: underline;
-//         margin-left: 45%;
-//     }
-
-//     .item{
-//         display: flex;
-//         gap: 20px;
-
-//         .userImg{
-//             width: 300px;
-//             height: 300px;
-//             border-radius: 50%;
-//             border-color: rgb(0, 0, 0);
-//             border: 10px;
-//             object-fit: cover;
-//         }
-
-//         .details{
-//             padding: 18px;
-
-//             .username{
-//                 margin-bottom: 10px;
-//                 color: rgb(116, 113, 113);
-//             }
-
-//             .detailItem{
-//                 margin-bottom: 10px;
-//                 font-size: 14px;
-
-//                 .itemKey{
-//                     color: rgba(0, 0, 0, 0.801);
-//                     font-weight: bold;
-//                     margin-right: 10px;
-//                 }
-
-//                 .itemValue{
-//                     font-weight: 300;
-//                     color: black;
-//                 }
-//             }
-//         }
-//     }
-// }
-
-// .right{
-//     flex: 1;
-//     padding: 20px;
-//     margin-top: 20px;
-//     -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-//     box-shadow: 2px 4px 10px 1px rgba(122, 117, 117, 0.47);
-
-//     .userImg{
-//         width: 300px;
-//         height: 100%;
-//         border-radius: 1%;
-//         border-color: rgb(0, 0, 0);
-//         border: 10px;
-//         object-fit: cover;
-//     }
-// }
-// }
-
-
-.bottom{
-padding: 20px;
--webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-box-shadow: 2px 4px 10px 1px rgba(48, 47, 47, 0.47);
-margin: 20px;
-flex: 1;
-}
 
 .title{
     font-size: 22px;

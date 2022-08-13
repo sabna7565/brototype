@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { registerUser, loginUser, getMe, editUser, fetchSyllabus, addTask, fetchTask, fetchModalTask, fetchReview, } = require('../controllers/userController')
+const { registerUser, loginUser, getMe, editUser, fetchSyllabus, addTask, fetchTask, fetchModalTask, fetchReview, editProfile,} = require('../controllers/userController')
 
 const {protect} = require('../middleware/authMiddleware')
 
@@ -13,6 +13,7 @@ router.post('/add-task/:id/:domain/:week', protect, addTask)
 router.get('/fetch-task/:id', protect, fetchTask)
 router.get('/fetch-taskmodal/:id', protect, fetchModalTask)
 router.get('/fetch-review/:id', protect, fetchReview)
+router.put('/change-profile', protect, editProfile)
 
 
 module.exports = router

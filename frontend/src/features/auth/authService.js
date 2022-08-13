@@ -40,6 +40,19 @@ const editUser = async (token, userData) => {
     return data;
 }
 
+//update staff details
+const editPro = async (token, userData) => {
+    const config = {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    };
+    const { data } = await api.editUserProfile(userData, config);
+    if (data) {
+        localStorage.setItem('user', JSON.stringify(data));
+    }
+    return data;
+}
 
 // logout user
 const logout = () => {
@@ -47,7 +60,7 @@ const logout = () => {
 }
 
 const authService = {
-    register,login, logout, editUser,
+    register,login, logout, editUser, editPro,
 }
 
 export default authService

@@ -74,7 +74,7 @@ const [st, setSt] = React.useState(null);
 
 return (
     <div className='syllabus'>
-      <div className="heading">
+      <div className="syllabusheading">
       <span className='syllabustitle'>Syllabus</span>
      <Link to="/admin/syllabus/new/">
       <button className='addsyllabus'>Add Syllabus</button></Link>

@@ -1,6 +1,5 @@
-.usersidebar{
-  
-  height: 800px;
+.usersidebar{  
+  height: 600px;
   display: grid;
   margin-top: 5px;
   border-radius: 20px;
@@ -21,6 +20,14 @@
       align-items: center;
       margin-left: 30px;
       font-weight: bold;
+    }
+    .upro1{
+      height: 210px;
+      width: 200px;
+      flex: 2.3;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
     }
     .upro{
       height: 210px;

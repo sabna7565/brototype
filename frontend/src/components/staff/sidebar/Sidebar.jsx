@@ -27,19 +27,7 @@ const Sidebar = () => {
  
   const {sprofile } = formData;
     
-    // const profileUpdation = async (proPicture) => {
-    //   try {
-    //       const data = await UploadImage(proPicture);
-    //       setProImage(data.secure_url.toString());
-    //   } catch (error) {
-    //     console.log(error)
-    //   }
-    //   const staffData = { sprofile:  pro_image ? pro_image : staff.sprofile, }
-    //   dispatch(updateStaff(staffData));
-    //   console.log("propic", staffData);
-    // }
-
-    useEffect(() => {
+       useEffect(() => {
       dispatch(updateStaff(formData))
     }, [formData.sprofile])
 

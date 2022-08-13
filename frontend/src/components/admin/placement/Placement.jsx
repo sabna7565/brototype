@@ -67,7 +67,7 @@ let placement = Fulldata.placement ? Fulldata.placement : [];
 
   return (
     <div className='placement'>
-    <div className="heading">
+    <div className="placeheading">
     <span className='syllabustitle'>Placements</span>
    <Link to="/admin/placements/new/">
     <button className='addsyllabus'>Add Placement</button></Link>

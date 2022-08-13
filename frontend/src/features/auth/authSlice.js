@@ -43,6 +43,17 @@ export const updateUser = createAsyncThunk('update-student-deetails', async (use
     }
 })
 
+//edit user profile
+export const updatePro = createAsyncThunk('update-user-propic', async (userDetails, thunkAPI) => {
+    try {
+        const token = thunkAPI.getState().auth.user.token;
+        return await authService.editPro(token, userDetails);
+    } catch (error) {
+        const message = (error.response && error.response.data && error.response.data.message) || error.message || error.toString()
+        return thunkAPI.rejectWithValue(message)
+    }
+})
+
 // user logout
 export const logout = createAsyncThunk('auth/logout', async () => {
     await authService.logout()
@@ -97,6 +108,20 @@ export const authSlice = createSlice({
             state.isSuccess = true
         },
         [updateUser.rejected]: (state, action) => {
+            state.isLoading = false
+            state.isError = true
+            state.message = action.payload
+            state.user = null
+        },
+        [updatePro.pending]: (state) => {
+            state.isLoading = true
+        },
+         [updatePro.fulfilled]: (state, action) => {
+            state.user = action.payload
+            state.isLoading = false
+            state.isSuccess = true
+        },
+        [updatePro.rejected]: (state, action) => {
             state.isLoading = false
             state.isError = true
             state.message = action.payload

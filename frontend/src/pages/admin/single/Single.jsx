@@ -22,9 +22,7 @@ const userId = useParams()
           <SIngleUser />
         </div>        
       </div>           
-      <div className="bottom">
-      <h1 className="title">Review Details</h1>
-      </div>
+     
       </div>
     </div>
   )

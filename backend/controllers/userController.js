@@ -153,12 +153,59 @@ const editUser = asyncHandler(async (req, res) => {
             designation: user.designation,
             proof_image: user.proof_image,
             week: user.week,
+            profile_image: user.profile_image
         })
     } catch (error) {
         res.status(400).json(error);
     }
 })
 
+
+// @desc  update user profile
+// @route  PUT /api/users/more/:id
+// @access Private
+const editProfile = asyncHandler(async (req, res) => {
+    const userId = req.user._id;
+    try{
+        const updateUserData = {            
+            profile_image: req.body.profile_image,
+        }
+
+        const user = await User.findByIdAndUpdate(userId, updateUserData, {
+            new: true
+        })
+        res.status(200).json({
+            _id: user.id,
+            name: user.name,
+            batch: user.batch, 
+            email: user.email,
+            mobile: user.mobile, 
+            token: generateToken(user._id),
+            dob: user.dob,
+            age: user.age,
+            domain: user.domain,
+            gender: user.gender,
+            father: user.father,
+            fcontact: user.fcontact,
+            mother: user.mother,
+            guardian: user.guardian,
+            relationship: user.relationship,
+            address: user.address,
+            village: user.village,
+            taluk: user.taluk,
+            qualification: user.qualification,
+            college: user.college,
+            experience: user.experience,
+            company: user.company,
+            designation: user.designation,
+            proof_image: user.proof_image,
+            week: user.week,
+            profile_image: user.profile_image
+        })
+    } catch (error) {
+        res.status(400).json(error);
+    }
+})
 // @desc  Get user data
 // @route  GET /api/users/me
 // @access Private
@@ -285,5 +332,5 @@ const fetchReview = asyncHandler(async (req,res) =>{
     }
 })
 module.exports = {
-    registerUser, loginUser, getMe, editUser, fetchSyllabus, addTask, fetchTask, fetchModalTask, fetchReview,
+    registerUser, loginUser, getMe, editUser, fetchSyllabus, addTask, fetchTask, fetchModalTask, fetchReview, editProfile,
 }

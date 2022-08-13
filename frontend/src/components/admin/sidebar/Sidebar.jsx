@@ -52,7 +52,7 @@ const onLogout = () => {
         <Link to="/admin/users">
         <li>
           <PersonIcon className='icon'/>
-          <span>students</span>
+          <span>Students</span>
         </li>
         </Link>
 
@@ -72,12 +72,12 @@ const onLogout = () => {
         </li>
         </Link>
         
-        <Link to="/admin/designation">
+        {/* <Link to="/admin/designation">
         <li>
           <WorkIcon className='icon'/>
           <span>Designation</span>
         </li>
-        </Link>
+        </Link> */}
 
         <Link to="/admin/syllabus">
         <li>

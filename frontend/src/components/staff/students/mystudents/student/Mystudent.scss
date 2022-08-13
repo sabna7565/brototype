@@ -1,76 +1,69 @@
 .staffstudent{
-    margin-top: 25px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    .studhead{
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        display: flex;
     .stafstudtitle{
         font-size: 25px;
         font-weight: bold;
         text-decoration: underline;
         justify-content: center;
         align-items: center;
-        margin-left: 12em;
         height: 80px;
-        padding-top: 20px;
         text-transform: uppercase;
+        margin-left: 70px;
     }
     .addgrp{
-        margin-left: 65%;
-        margin-top: 18px;
+        margin-top: 115px;
         height: 36px;
         width: 126px;
         color: white;
         text-decoration: none;
         font-size: 15px;
+        margin-left: 70px;
         background-color: rgb(25, 65, 48);
       }
-    .studentcontent{
+    }
+      .usersingleCntainer{
+        flex: 10;        
         display: flex;
-        margin-top: 50px;
-        padding-left: 30px;
-        .first{
-           border: 3px;
-          border-color: rgb(0, 0, 0);
-          border: 10px;
-          border-width: 1em;
-          display: grid;
-          padding: 10px;
-          margin-left: 1px;
-          line-height: 1px;
-          flex: 3.5;
-          height: 500px;
-          .details{
+        margin-top: 1%;
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+  
+             .ucenter{
+            padding: 20px;
+            margin-left: 10px;
+            width: 550px;
+            line-height: 35px;
+            text-transform: capitalize;
             font-size: 15px;
+            line-height: 5px;
+            .details{
+              font-size: 15px;
+              line-height: 5px;
+              color: black;  
+          }
         }
-            
-        }
-        .second{
-            flex: 4.5;
-           border: 3px;
-          border-color: rgb(0, 0, 0);
-          border: 10px;
-          border-width: 1em;
-          display: grid;
-          padding: 10px;
-          line-height: 1px;
-          height: 500px;
-          .details{
-            font-size: 15px;
-        }
-        }
-        .third{
-            flex: 4;
-
-            .studpro{
-                height: 220px;
-
-                .studproimg{
-                    width: 170px;
-                    height: 170px;
-                }
-            }
-            .studproof{
-
+  
+        .right{
+            padding-left: 12px;
+            margin: 2px;
+  
+            .mystudentsadImg{
+                width: 250px;
+                height: 450px;
+                border-color: rgb(0, 0, 0);
+                border: 2px;
+                object-fit: cover;
             }
         }
     }
-
 
 }
