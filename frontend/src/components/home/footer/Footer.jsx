@@ -49,10 +49,10 @@ const Footer = () => {
           </div>
           <ul>
             <li>
-              <a href="#">InfoPark Kochi,</a>
+              <a href="#">Info Park Kochi,</a>
             </li>
             <li>
-              <a href="#">KINFRA Calicut</a>
+              <a href="#">Kinfra Calicut</a>
             </li>
             <li>
               <a href="#">Dotspace Thiruvananthapuram</a>

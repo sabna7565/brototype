@@ -78,40 +78,55 @@
                 width: 100px;
             }
             .ulogouthbtn{
+                margin-left: 30px;
                 border: none;
                 transition: all 0.3s ease;
                 overflow: hidden;
+                content: " ";
+                z-index: -1;
+                top: 0;
+                left: 0;
+                width: 100px;
+                height: 30px;
+                 background-color: #1fd1f9;
+                 background-image: linear-gradient(315deg, #2c19d8 0%, #069481 74%);
+                transition: all 0.3s ease;
 
             }
-                .ulogouthbtn:after {
-                    position: absolute;
-                    content: " ";
-                    z-index: -1;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                     background-color: #1fd1f9;
-                  background-image: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%);
-                    transition: all 0.3s ease;
-                  }
-                  .ulogouthbtn:hover {
-                    background: transparent;
-                    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
-                                -4px -4px 6px 0 rgba(116, 125, 136, .2), 
-                      inset -4px -4px 6px 0 rgba(255,255,255,.5),
-                      inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
-                    color: #fff;
-                  }
-                  .ulogouthbtn:after {
-                    -webkit-transform: scale(2) rotate(180deg);
-                    transform: scale(2) rotate(180deg);
-                    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
-                                -4px -4px 6px 0 rgba(116, 125, 136, .2), 
-                      inset -4px -4px 6px 0 rgba(255,255,255,.5),
-                      inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
-                  }
+               
+            .ulogouthbtn:hover {
+            background: white;
+            box-shadow:  4px 4px 6px 0 rgba(3, 66, 68, 0.5),
+                        -4px -4px 6px 0 rgba(3, 79, 82, 0.2), 
+                inset -4px -4px 6px 0 rgba(3, 62, 70, 0.5),
+                inset 4px 4px 6px 0 rgba(6, 74, 77, 0.3);
+            color: black;
+            }
             
+            .uregisterhbtn{
+                border: none;
+                transition: all 0.3s ease;
+                overflow: hidden;
+                content: " ";
+                z-index: -1;
+                top: 0;
+                left: 0;
+                width: 100px;
+                height: 30px;
+                 background-color: #1fd1f9;
+                 background-image: linear-gradient(315deg, #1dbb99 0%, #250b69 74%);
+                transition: all 0.3s ease;
+
+            }
+               
+            .uregisterhbtn:hover {
+            background: white;
+            box-shadow:  4px 4px 6px 0 rgba(3, 66, 68, 0.5),
+                        -4px -4px 6px 0 rgba(3, 79, 82, 0.2), 
+                inset -4px -4px 6px 0 rgba(3, 62, 70, 0.5),
+                inset 4px 4px 6px 0 rgba(6, 74, 77, 0.3);
+            color: black;
+            }
         }
     }
 }

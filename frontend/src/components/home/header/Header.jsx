@@ -110,14 +110,14 @@ const onsLogout = () => {
             <>
           <Link to='/login'>
             <li style={{color:'white'}}>
-                <button className='hbtn'>Login</button>
+                <button className='ulogouthbtn'>Login</button>
              
              </li>
             </Link>  
 
             <Link to='/register'>
             <li style={{color:'white'}}>
-                <button className='hbtn'>Register</button>
+                <button className='uregisterhbtn'>Enroll</button>
             
             </li>
             </Link>  
@@ -136,7 +136,7 @@ const onsLogout = () => {
 
           {staff ? ( 
             <li>
-              <button type='button' className='logouthbtn' onClick={onsLogout}>
+              <button type='button' className='ulogouthbtn' onClick={onsLogout}>
                  Logout
                 </button>  
             </li>

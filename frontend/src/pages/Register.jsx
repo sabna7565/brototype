@@ -6,6 +6,7 @@ import {FaUser} from 'react-icons/fa'
 import {register, reset} from '../features/auth/authSlice'
 import Spinner from '../components/Spinner'
 import Header from '../components/home/header/Header'
+import './Register.scss'
 
 function Register() {
     const [formData, setFormData] = useState({
@@ -61,14 +62,15 @@ function Register() {
 
   return <>
    <Header />
+    <div className="foradminheading">
     <section className='heading'>
        <h1>
-        <FaUser /> Register
+        <FaUser /> Enroll Now
        </h1> 
        <p>Please create an account</p>
-    </section>
-
-    <section className='form'>
+    </section></div>
+    <div className="forform">
+    <section className='fform'>
         <form onSubmit={onSubmit}>
             <div className='form-group'>
                <input type="text" className="form-control" id="name" name='name' value={name} placeholder='Enter your name' onChange={onChange} />
@@ -93,6 +95,7 @@ function Register() {
             </div>
         </form>
     </section>
+    </div>
   </>
 
 }

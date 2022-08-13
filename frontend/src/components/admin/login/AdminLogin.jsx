@@ -57,14 +57,14 @@ function AdminnLogin() {
     }
 
       return <>
-        
+        <div className="forheading">
         <section className='heading'>
            <h1>
              Admin Login
            </h1> 
            <p>Enter your credentials</p>
         </section>
-    
+        </div>
         <section className='form'>
             <form onSubmit={onSubmit}>
             
